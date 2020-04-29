@@ -9,6 +9,6 @@
 [start]
 @build = custom
 @shebang = "/bin/sh"
-@execute = ( exec NetworkManager -n )
+@execute = ( exec NetworkManager -n --debug 2>&1 )
 
 
