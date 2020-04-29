@@ -1,0 +1,13 @@
+# Frontend from obarun
+
+[main]
+@type = classic
+@description = "cups daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec 2>&1 
+exec cupsd -f)

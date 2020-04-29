@@ -1,0 +1,14 @@
+[main]
+@type = longrun
+@description = "NetworkManager daemon"
+@options = ( log )
+@user = ( root )
+@depends = ( dbus )
+
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec NetworkManager -n )
+
+

@@ -1,0 +1,17 @@
+[main]
+@type = longrun
+@description = "sddm daemon"
+@user = ( root )
+@options = ( log )
+@depends = ( dbus )
+@timeout-up = 3000
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( 
+# respect system locale
+[ -r /etc/locale.conf ] && . /etc/locale.conf && export LANG
+exec sddm 2>&1 )
+
+

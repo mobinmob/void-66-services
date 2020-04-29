@@ -1,0 +1,14 @@
+[main]
+@type = classic
+@description = "dhcpcd daemon"
+@user = ( root )
+@options = ( log env )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec dhcpcd ${cmd_args} )
+
+[environment]
+cmd_args=-B -M
+

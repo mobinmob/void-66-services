@@ -1,0 +1,10 @@
+[main]
+@type = longrun
+@description = "avahi daemon"
+@user = ( root )
+@depends = ( dbus )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec avahi-daemon -s )

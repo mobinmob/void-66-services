@@ -1,0 +1,16 @@
+[main]
+@type = longrun
+@description = "dbus system daemon"
+@user = ( root )
+@notify = 4
+@options = ( log )
+
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = (
+[ ! -d /run/dbus ] && install -m755 -g 22 -o 22 -d /run/dbus
+dbus-uuidgen --ensure
+exec dbus-daemon --system --nofork --nopidfile --print-pid=4 2>&1 )
+

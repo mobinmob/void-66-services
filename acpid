@@ -1,0 +1,14 @@
+[main]
+@type = classic
+@description = "acpid daemon"
+@user = ( root )
+@options = ( log env )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec 2>&1
+exec acpid -f ${OPTS} )
+
+[environment]
+OPTS=-l

@@ -1,0 +1,16 @@
+[main]
+@type = classic
+@description = "popcorn daemon"
+@user = ( root )
+@options = ( log env)
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = (s6-setuidgid _popcorn popcorn --server $SERVER --port $PORT
+exec s6-setuidgid _popcorn snooze popcorn --server $SERVER --port $PORT 2>&1)
+
+
+[environment]
+SERVER=popcorn.voidlinux.org
+PORT=8001

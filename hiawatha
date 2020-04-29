@@ -1,0 +1,14 @@
+[main]
+@type = longrun
+@description = "hiawatha server"
+@user = ( root )
+@options = ( log )
+
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec 2>&1
+exec hiawatha -d )
+
+

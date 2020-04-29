@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@description = "sndio daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( 
+OPTS=
+exec sndiod ${OPTS} -d )
+
