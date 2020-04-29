@@ -9,6 +9,6 @@
 [start]
 @build = custom
 @shebang = "/bin/sh"
-@execute = ( exec connmand -n )
+@execute = ( exec connmand -n 2>&1 )
 
 
