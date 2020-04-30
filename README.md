@@ -7,3 +7,15 @@ the [void-packages](https://github.com/void-linux/void-packages) repository
 [original Obarun services](https://framagit.org/pkg/observice) which are under 
 the ISC license.
 
+Service frontends can be placed in:
+
+- */usr/share/66/service/*
+
+This is the default location for packaged services.
+
+- */etc/66/service/* 
+
+This is the default location for administrator services, that override the
+default/packaged services with the same name if present.
+
+The services contained in this repository are very much a **work in progress**.
