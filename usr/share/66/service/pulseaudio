@@ -2,12 +2,10 @@
 @type = classic
 @description = "pulseaudio daemon"
 @user = ( root )
-@options = ( log )
+@options = ( log  )
 
 [start]
 @build = custom
 @shebang = "/bin/sh"
-@execute = (
-exec pulseaudio --system=yes )
-
+@execute = (exec pulseaudio --system=yes --daemonize=no 2>&1 )
 
