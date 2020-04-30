@@ -1,0 +1,10 @@
+[main]
+@type = classic
+@description = "socklog daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec s6-envuidgid -u nobody socklog unix /dev/log 2>&1 )

@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@description = "nano kernel log daemon"
+@user = ( root )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec s6-envuidgid -u nobody nanoklogd )
