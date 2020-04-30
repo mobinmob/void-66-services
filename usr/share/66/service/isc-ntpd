@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@description = "isc ntp daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec 2>&1 
+exec isc-ntpd -g -u ntpd:ntpd -n )
+
+
