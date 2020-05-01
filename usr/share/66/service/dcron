@@ -1,0 +1,16 @@
+[main]
+@type = classic
+@description = "dcron daemon"
+@user = ( root )
+@options = ( log env )
+# https://github.com/dubiousjim/dcron/issues/13
+@flags = ( nosetsid )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec dcrond -f ${OPTS} 2>&1 )
+
+[environment]
+OPTS=
+
