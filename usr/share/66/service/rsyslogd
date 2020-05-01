@@ -1,0 +1,11 @@
+[main]
+@type = longrun
+@description = "rsyslog daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec rsyslogd -n )
+
