@@ -3,8 +3,12 @@
 @description = "avahi daemon"
 @user = ( root )
 @depends = ( dbus )
+@options = ( log env )
 
 [start]
 @build = custom
 @shebang = "/bin/sh"
-@execute = ( exec avahi-daemon -s )
+@execute = ( exec avahi-daemon ${OPTS} )
+
+[environment]
+OPTS=-s

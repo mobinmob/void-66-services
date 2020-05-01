@@ -2,12 +2,14 @@
 @type = classic
 @description = "isc ntp daemon"
 @user = ( root )
-@options = ( log )
+@options = ( log env )
 
 [start]
 @build = custom
 @shebang = "/bin/sh"
 @execute = ( exec 2>&1 
-exec isc-ntpd -g -u ntpd:ntpd -n )
+exec isc-ntpd ${OPTS} -u ntpd:ntpd -n )
 
+[environment]
+OPTS=-g
 
