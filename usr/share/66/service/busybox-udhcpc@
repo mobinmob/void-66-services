@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@description = "Start busybox udhcpc for @I interface "
+@user = ( root )
+@options = ( log )
+
+[start]
+@build = auto
+@execute = ( exec busybox udhcpc -f -i @I )
