@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@description = "tor daemon"
+@user = ( root )
+@options = ( log  )
+
+[start]
+@build = auto
+@execute = ( exec tor --runasdaemon 0 )
