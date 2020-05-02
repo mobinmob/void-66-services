@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@description = "deluge webui daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( s6-setuidgid deluge 
+ exec deluge-web -d 2>&1 )
+
+
