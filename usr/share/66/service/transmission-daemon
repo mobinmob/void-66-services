@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@description = "transmission daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec s6-setuidgid transmission transmission-daemon -f --log-error  2>&1 )
+
+
