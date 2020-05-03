@@ -2,12 +2,12 @@
 @type = classic
 @description = "sndio daemon"
 @user = ( root )
-@options = ( log )
+@options = ( log env )
 
 [start]
 @build = custom
 @shebang = "/bin/sh"
-@execute = ( 
-OPTS=
-exec sndiod ${OPTS} -d )
+@execute = ( exec sndiod ${OPTS} -d )
 
+[environment]
+OPTS=
