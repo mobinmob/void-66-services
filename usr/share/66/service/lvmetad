@@ -1,0 +1,10 @@
+[main]
+@type = classic
+@description = "LVM metadata cache daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@build = auto
+@execute = ( exec lvmetad -f )
+
