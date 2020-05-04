@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@description = "metalog, alternative syslog daemon"
+@user = ( root )
+@options = ( log env )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( exec metalog ${OPTS} )
+
+[environment]
+OPTS=-v
