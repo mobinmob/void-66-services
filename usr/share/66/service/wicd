@@ -1,0 +1,11 @@
+[main]
+@type = longrun
+@description = "wicd"
+@user = ( root )
+@depends = ( dbus )
+@options = ( log )
+
+[start]
+@build = auto
+@execute = ( wicd -f )
+
