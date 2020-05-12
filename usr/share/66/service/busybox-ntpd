@@ -2,12 +2,8 @@
 @type = classic
 @description = "busybox ntp daemon"
 @user = ( root )
-@options = ( log env )
+@options = ( log )
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( exec busybox ntpd -n ${OPTS} 2>&1 )
-
-[environment]
-OPTS=
+@build = auto
+@execute = ( busybox ntpd  -dn )
