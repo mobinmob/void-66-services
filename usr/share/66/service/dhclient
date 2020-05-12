@@ -6,8 +6,7 @@
 
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( exec dhclient -d 2>&1 )
+@build = auto
+@execute = ( dhclient -d )
 
 

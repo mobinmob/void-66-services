@@ -6,9 +6,7 @@
 
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( exec 2>&1
-exec hiawatha -d )
+@build = auto
+@execute = ( hiawatha -d )
 
 
