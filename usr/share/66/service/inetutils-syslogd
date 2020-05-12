@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@description = "inetutils syslog daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@build = auto
+@execute = ( syslogd -nd )
