@@ -5,7 +5,6 @@
 @options = ( log )
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( exec rsyslogd -n )
+@build = auto
+@execute = ( rsyslogd -n )
 
