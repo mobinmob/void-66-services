@@ -7,8 +7,7 @@
 
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( exec connmand -n 2>&1 )
+@build = auto
+@execute = ( connmand -n )
 
 

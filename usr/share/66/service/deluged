@@ -5,9 +5,8 @@
 @options = ( log )
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( s6-setuidgid deluge 
- exec deluged -d 2>&1 )
+@build = auto
+@runas = deluge
+@execute = ( deluged -d )
 
 
