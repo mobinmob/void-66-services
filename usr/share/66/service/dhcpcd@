@@ -1,6 +1,7 @@
 [main]
 @type = classic
 @description = "dhcpcd daemon for @I"
+@version = 0.1.0 
 @user = ( root )
 @options = ( log env )
 

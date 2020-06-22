@@ -1,11 +1,11 @@
 [main]
 @type = classic
 @description = "transmission daemon"
+@version = 0.1.0 
 @user = ( root )
 @options = ( log )
 
 [start]
-@build = auto
 @runas = transmission
 @execute = ( transmission-daemon -f --log-debug )
 

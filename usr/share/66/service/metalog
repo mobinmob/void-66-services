@@ -1,6 +1,7 @@
 [main]
 @type = classic
 @description = "metalog, alternative syslog daemon"
+@version = 0.1.0 
 @user = ( root )
 @options = ( log env )
 

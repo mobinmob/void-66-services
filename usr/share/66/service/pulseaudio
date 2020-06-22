@@ -1,10 +1,10 @@
 [main]
 @type = classic
 @description = "pulseaudio daemon"
+@version = 0.1.0 
 @user = ( root )
 @options = ( log  )
 
 [start]
-@build = auto
 @execute = ( pulseaudio --system=yes --daemonize=no )
 

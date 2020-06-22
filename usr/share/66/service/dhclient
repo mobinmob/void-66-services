@@ -1,12 +1,12 @@
 [main]
 @type = classic
 @description = "dhclient daemon"
+@version = 0.1.0 
 @user = ( root )
 @options = ( log )
 
 
 [start]
-@build = auto
 @execute = ( dhclient -d )
 
 

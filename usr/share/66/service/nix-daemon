@@ -1,9 +1,9 @@
 [main]
 @type = classic
 @description = "nix daemon"
+@version = 0.1.0 
 @user = ( root )
 @options = ( log )
 
 [start]
-@build = auto
 @execute = ( nix-daemon )

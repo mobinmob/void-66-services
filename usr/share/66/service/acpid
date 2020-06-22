@@ -1,6 +1,7 @@
 [main]
 @type = classic
 @description = "acpid daemon"
+@version = 0.1.0 
 @user = ( root )
 @options = ( log env )
 

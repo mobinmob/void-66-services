@@ -1,6 +1,7 @@
 [main]
 @type = classic
 @description = "chrony ntp daemon"
+@version = 0.1.0 
 @user = ( root )
 @options = ( log )
 
@@ -11,6 +12,4 @@
 exec chronyd -n -u chrony 2>&1 )
 
 [stop]
-@build = custom
-@shebang = "/bin/sh"
 @execute = ( s6-rmrf /var/run/chrony/chrony.pid )

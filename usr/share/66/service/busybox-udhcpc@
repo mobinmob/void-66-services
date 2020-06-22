@@ -1,6 +1,7 @@
 [main]
 @type = classic
 @description = "Start busybox udhcpc for @I interface "
+@version = 0.1.0 
 @user = ( root )
 @options = ( log )
 

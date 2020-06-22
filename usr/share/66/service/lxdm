@@ -1,16 +1,15 @@
 [main]
 @type = longrun
 @description = "lxdm daemon"
+@version = 0.1.0 
 @user = ( root )
 @options = ( log )
 @depends = ( dbus )
 @timeout-up = 3000
 
 [start]
-@build = auto
 @execute = ( exec lxdm )
 
 [stop] 
-@build = auto
 @execute = ( s6-rmrf /run/lxdm )
 

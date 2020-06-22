@@ -1,6 +1,7 @@
 [main]
 @type = longrun
 @description = "dbus system daemon"
+@version = 0.1.0 
 @user = ( root )
 @notify = 4
 @options = ( log )

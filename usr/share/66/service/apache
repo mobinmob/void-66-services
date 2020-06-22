@@ -1,6 +1,7 @@
 [main]
 @type = longrun
 @description = "apache http daemon"
+@version = 0.1.0 
 @user = ( root )
 @options = ( log )
 

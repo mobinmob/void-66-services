@@ -1,13 +1,13 @@
 [main]
 @type = longrun
 @description = "NetworkManager daemon"
+@version = 0.1.0
 @options = ( log )
 @user = ( root )
 @depends = ( dbus )
 
 
 [start]
-@build = auto
 @execute = ( NetworkManager -n --debug )
 
 

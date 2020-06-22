@@ -3,11 +3,9 @@
 [main]
 @type = classic
 @description = "cups daemon"
+@version = 0.1.0 
 @user = ( root )
 @options = ( log )
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( exec 2>&1 
-exec cupsd -f)
+@execute = ( exec cupsd -f )

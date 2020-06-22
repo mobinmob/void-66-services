@@ -1,6 +1,7 @@
 [main]
 @type = longrun
 @description = "avahi daemon"
+@version = 0.1.0 
 @user = ( root )
 @depends = ( dbus )
 @options = ( log env )
