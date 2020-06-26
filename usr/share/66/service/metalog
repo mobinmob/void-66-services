@@ -1,14 +1,23 @@
 [main]
 @type = classic
-@description = "metalog, alternative syslog daemon"
-@version = 0.1.0 
+@version = @VERSION@
+@description = "metalog daemon"
 @user = ( root )
 @options = ( log env )
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( exec metalog ${OPTS} )
+@execute = ( execl-cmdline -s { metalog -v −−pidfile=${pid_name} } )
+
+[stop]
+@execute = (
+	foreground {
+		redirfd -r 0 ${pid_name}
+		forstdin -d"\n" -- pid
+		importas -ui pid pid
+		kill -TERM ${pid}
+	}
+	s6-rmrf ${pid_name}
+)
 
 [environment]
-OPTS=-v
+pid_name=!/run/metalog.pid
