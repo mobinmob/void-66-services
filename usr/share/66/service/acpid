@@ -1,15 +1,17 @@
 [main]
 @type = classic
+@version = @VERSION@
 @description = "acpid daemon"
-@version = 0.1.0 
 @user = ( root )
 @options = ( log env )
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( exec 2>&1
-exec acpid -f ${OPTS} )
+@execute = ( execl-cmdline -s { acpid -f ${cmd_args} -s ${socket_dir}/${socket_name} } )
+
+[stop]
+@execute = ( s6-rmrf ${socket_dir}/${socket_name} )
 
 [environment]
-OPTS=-l
+cmd_args=!-n
+socket_dir=!/run
+socket_name=!acpid.socket

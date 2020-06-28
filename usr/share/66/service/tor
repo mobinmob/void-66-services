@@ -1,9 +1,9 @@
 [main]
-@type = classic
-@description = "tor daemon"
-@version = 0.1.0 
-@user = ( root )
-@options = ( log  )
+@type = longrun
+@version = @VERSION@
+@description = "Anonymizing Overlay Network"
+@options = ( log )
+@user = ( root tor )
 
 [start]
-@execute = ( exec tor --runasdaemon 0 )
+@execute = ( tor --runasdaemon 0 )

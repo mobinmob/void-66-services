@@ -1,11 +1,9 @@
-# Frontend from obarun
-
 [main]
 @type = classic
+@version = @VERSION@
 @description = "cups daemon"
-@version = 0.1.0 
 @user = ( root )
 @options = ( log )
 
 [start]
-@execute = ( exec cupsd -f )
+@execute = ( cupsd -f )

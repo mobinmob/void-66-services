@@ -1,13 +1,12 @@
 [main]
 @type = longrun
+@version = @VERSION@
 @description = "apache http daemon"
-@version = 0.1.0 
 @user = ( root )
 @options = ( log )
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( [ ! -d /run/httpd ] && install -d -m0710 -o root -g _apache /run/httpd 
-exec exec httpd -DNO_DETACH )
-
+@execute = (
+	execl-toc -d /run/httpd -m 0710 -g _apache -u root
+	httpd -DNO_DETACH
+)

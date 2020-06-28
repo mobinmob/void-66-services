@@ -1,17 +1,23 @@
 [main]
 @type = longrun
+@version = @VERSION@
 @description = "dbus system daemon"
-@version = 0.1.0 
 @user = ( root )
+@maxdeath = 3
 @notify = 4
-@options = ( log )
-
+@options = ( log env )
+@timeout-up = 3000
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
 @execute = (
-[ ! -d /run/dbus ] && install -m755 -g 22 -o 22 -d /run/dbus
-dbus-uuidgen --ensure
-exec dbus-daemon --system --nofork --nopidfile --print-pid=4 2>&1 )
+	execl-toc -S ${socket_name} -m 0755 -g dbus -u dbus
+	foreground { dbus-uuidgen --ensure }
+	execl-cmdline -s { dbus-daemon --nofork --nopidfile --system --print-pid=4 ${cmd_args} }
+)
 
+[stop]
+@execute = ( s6-rmrf ${socket_name} )
+
+[environment]
+cmd_args=!--address=unix:path=/run/dbus/system_bus_socket
+socket_name=!/run/dbus/system_bus_socket

@@ -1,13 +1,13 @@
 [main]
 @type = longrun
-@description = "NetworkManager daemon"
-@version = 0.1.0
-@options = ( log )
+@version = @VERSION@
+@description = "networkmanager daemon"
 @user = ( root )
-@depends = ( dbus )
-
+@options = ( log env )
+@extdepends = ( dbus )
 
 [start]
-@execute = ( NetworkManager -n --debug )
+@execute = ( execl-cmdline -s { NetworkManager ${cmd_args} } )
 
-
+[environment]
+cmd_args=!-n --debug
