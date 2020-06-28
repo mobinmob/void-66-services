@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = @VERSION@
+@description = "ssh daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@build = auto
+@execute = ( 
+	foreground { exec ssh-keygen -A } 
+	execl-cmdline -s { /usr/sbin/sshd -e -D }
+)

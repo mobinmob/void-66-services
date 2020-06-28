@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@version = @VERSION@
+@description = "nullmailer daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = ( s6-envuidgid -u _nullmail nullmailer-send )

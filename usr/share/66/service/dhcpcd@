@@ -1,15 +1,9 @@
 [main]
 @type = classic
+@version = @VERSION@
 @description = "dhcpcd daemon for @I"
-@version = 0.1.0 
 @user = ( root )
-@options = ( log env )
+@options = ( log )
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( exec dhcpcd -B @I ${OPTS} 2>&1 )
-
-[environment]
-OPTS=
-
+@execute = ( dhcpcd -B @I 2>&1 )
