@@ -6,4 +6,4 @@
 @options = ( log )
 
 [start]
-@execute = ( dhcpcd -B @I 2>&1 )
+@execute = ( dhcpcd -B @I )
