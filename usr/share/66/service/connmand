@@ -1,7 +1,7 @@
 [main]
 @type = longrun
 @description = "conman daemon"
-@version = 0.1.0 
+@version = @VERSION@ 
 @options = ( log )
 @user = ( root )
 @depends = ( dbus )
