@@ -1,0 +1,13 @@
+[main]
+@type = longrun
+@version = @VERSION@
+@description = "lightdm daemon"
+@user = ( root )
+@options = ( log )
+@extdepends = ( dbus )
+
+[start]
+@execute = ( lightdm )
+
+[stop]
+@execute = ( s6-rmrf /run/lightdm/root )
