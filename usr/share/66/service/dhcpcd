@@ -6,11 +6,10 @@
 @options = ( log env )
 
 [start]
-@execute = ( execl-cmdline -s { dhcpcd -B ${cmd_args} -f } )
+@execute = ( execl-cmdline -s { dhcpcd -f -B ${cmd_args} } )
 
 [stop]
-@execute = ( execl-cmdline -s { dhcpcd ${cmd_args_stop} } )
+@execute = ( dhcpcd -x )
 
 [environment]
 cmd_args=!-M
-cmd_args_stop=!-x
