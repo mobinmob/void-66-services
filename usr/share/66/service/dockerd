@@ -1,0 +1,18 @@
+[main]
+@type = classic
+@version = @VERSION@
+@description = "dockerd service"
+@options = ( log env )
+@user = ( root )
+@maxdeath = 3
+
+[start]
+@execute = (
+  foreground { execl-toc -n -m /sys/fs/cgroup/systemd -t cgroup -o none,name=systemd -d cgroup /sys/fs/cgroup/systemd }
+  execl-toc -S ${socket} -m 0660
+  if { chown root:docker ${socket} }
+  chpst -o 1048576 -p 1048576 dockerd -H unix://${socket}
+)
+
+[environment]
+socket=!/run/docker.sock
