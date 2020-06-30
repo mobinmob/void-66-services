@@ -1,0 +1,10 @@
+[main]
+@type = classic
+@version = @VERSION@
+@description = "nullmailer daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@runas = _nullmail
+@execute = ( nullmailer-send )
