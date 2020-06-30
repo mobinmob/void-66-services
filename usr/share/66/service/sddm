@@ -5,7 +5,6 @@
 @user = ( root )
 @options = ( log )
 @extdepends = ( dbus )
-@optsdepends = ( elogind )
 @timeout-up = 3000
 
 [start]
