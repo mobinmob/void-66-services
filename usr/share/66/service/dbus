@@ -11,7 +11,6 @@
 [start]
 @execute = (
 	execl-toc -S ${socket_name} -m 0755 -g dbus -u dbus
-	foreground { dbus-uuidgen --ensure }
 	execl-cmdline -s { dbus-daemon --nofork --nopidfile --system --print-pid=4 ${cmd_args} }
 )
 
