@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = @VERSION@
+@description = "distcc daemon"
+@user = ( root )
+@options = ( log env)
+
+[start]
+@execute = ( execl-cmdline -s { distccd --no-detach --daemon --user nobody ${allow_options} } )
+
+[environment]
+allow_options=!--allow 127.0.0.1
