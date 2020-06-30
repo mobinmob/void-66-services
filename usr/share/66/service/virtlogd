@@ -1,0 +1,9 @@
+[main]
+@type = longrun
+@version = @VERSION@
+@description = "Virtual machine log manager"
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = ( virtlogd )

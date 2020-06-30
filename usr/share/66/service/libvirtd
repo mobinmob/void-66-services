@@ -1,0 +1,11 @@
+[main]
+@type = longrun
+@version = @VERSION@
+@description = "Virtualization daemon"
+@user = ( root )
+@depends = ( virtlockd virtlogd )
+@options = ( log )
+@extdepends = ( dbus )
+
+[start]
+@execute=( libvirtd )

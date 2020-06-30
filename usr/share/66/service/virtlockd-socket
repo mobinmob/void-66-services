@@ -1,0 +1,12 @@
+[main]
+@type = oneshot
+@version = @VERSION@
+@description = "Virtual machine lock manager socket"
+@user = ( root )
+@options = ( log env )
+
+[start]
+@execute = ( execl-toc -X -S ${socket} -m 0600 )
+
+[environment]
+socket=!/run/libvirt/virtlockd-sock
