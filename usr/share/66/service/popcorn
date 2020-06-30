@@ -7,7 +7,7 @@
 
 [start]
 @runas = _popcorn
-@execute = ( execl-cmdline -s { snooze popcorn --server ${server} --port ${port} 2>&1 } )
+@execute = ( execl-cmdline -s { snooze popcorn --server ${server} --port ${port} } )
 
 [environment]
 server=!popcorn.voidlinux.org
