@@ -3,13 +3,11 @@
 @version = @VERSION@
 @description = "dhcpcd daemon"
 @user = ( root )
-@options = ( log env )
+@options = ( log )
 
 [start]
-@execute = ( execl-cmdline -s { dhcpcd -B ${cmd_args} } )
+@execute = ( dhcpcd -m -B )
 
 [stop]
 @execute = ( dhcpcd -x )
 
-[environment]
-cmd_args=!-M
