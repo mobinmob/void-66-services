@@ -8,5 +8,5 @@
 [start]
 @execute = ( 
 	execl-toc -d /run/mpd -m 0755 -u mpd -g mpd
-	mpd -v --no-daemon --stderr
+	mpd --no-daemon --stderr
 )
