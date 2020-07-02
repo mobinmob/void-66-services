@@ -6,4 +6,7 @@
 @options = ( log )
 
 [start]
-@execute = ( dhcpcd -f -B @I )
+@execute = ( dhcpcd -B @I )
+
+[stop]
+@execute = ( dhcpcd -x @I )

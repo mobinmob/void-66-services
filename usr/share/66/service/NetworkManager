@@ -3,11 +3,9 @@
 @version = @VERSION@
 @description = "networkmanager daemon"
 @user = ( root )
-@options = ( log env )
+@options = ( log )
 @extdepends = ( dbus )
 
 [start]
-@execute = ( execl-cmdline -s { NetworkManager ${cmd_args} } )
+@execute = ( NetworkManager -n )
 
-[environment]
-cmd_args=!-n --debug
