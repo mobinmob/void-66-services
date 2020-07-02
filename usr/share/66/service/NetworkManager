@@ -7,7 +7,7 @@
 @extdepends = ( dbus )
 
 [start]
-@execute = ( execl-cmdline -s { NetworkManager ${cmd_args} } )
+@execute = ( execl-cmdline -s { NetworkManager -n ${cmd_args} } )
 
 [environment]
-cmd_args=!-n --debug
+cmd_args=!--debug
