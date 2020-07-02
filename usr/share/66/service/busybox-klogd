@@ -5,4 +5,4 @@
 @user = ( root )
 
 [start]
-@execute = ( exec busybox klogd -n )
+@execute = ( busybox klogd -n )

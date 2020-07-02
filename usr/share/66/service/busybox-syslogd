@@ -5,4 +5,4 @@
 @user = ( root )
 
 [start]
-@execute = ( exec busybox syslogd -n )
+@execute = ( busybox syslogd -n )
