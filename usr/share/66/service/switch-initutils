@@ -1,0 +1,10 @@
+[main]
+@type = oneshot
+@version = @VERSION@
+@description = "Switch initutils"
+@user = ( root )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = ( /etc/runit/core-services/99-switch-initutils.sh )
