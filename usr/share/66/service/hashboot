@@ -1,0 +1,19 @@
+[main]
+@type = oneshot
+@version = @VERSION@
+@description = "hashboot service"
+@user = ( root )
+@options = ( env )
+ 
+[start]
+@execute =
+(
+    if { 66-yeller -cdp hashboot -1 /dev/console starts... }
+    if -nt {
+    hashboot check
+    }
+    ${crash}
+)
+ 
+[environment]
+crash=!/etc/66/ishell
