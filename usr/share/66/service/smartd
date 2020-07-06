@@ -1,0 +1,9 @@
+[main]
+@type = longrun
+@description = "SMART Disk Monitoring daemon"
+@version = @VERSION@ 
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = ( smartd -n )

@@ -1,15 +1,13 @@
 [main]
 @type = classic
 @description = "OpenNTPD"
-@version = @VERSION@ 
+@version = @VERSION@
 @user = ( root )
 @options = ( log env )
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( exec openntpd -d ${OPTS} 2>&1 )
+@execute = ( execl-cmdline -s { openntpd -d ${cmd_args} } )
 
 [environment]
-OPTS=-s
+cmd_args=!-s
 

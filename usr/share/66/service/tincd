@@ -1,0 +1,9 @@
+[main]
+@type = longrun
+@description = "tinc vpn daemon"
+@version = @VERSION@ 
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = ( tincd -D )

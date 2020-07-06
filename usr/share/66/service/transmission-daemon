@@ -7,4 +7,4 @@
 
 [start]
 @runas = transmission
-@execute = ( transmission-daemon -f --log-debug )
+@execute = ( transmission-daemon -f )

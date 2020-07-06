@@ -1,0 +1,9 @@
+[main]
+@type = longrun
+@description = "iNet Wireless Daemon"
+@version = @VERSION@
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = ( /usr/libexec/iwd )
