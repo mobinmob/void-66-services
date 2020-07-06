@@ -6,7 +6,7 @@
 @options = ( log env )
 
 [start]
-@execute = ( foreground { execl-toc -d /var/run/chrony -m0750 -u chrony -g chrony }
+@execute = ( execl-toc -d /var/run/chrony -m0750 -u chrony -g chrony
  execl-cmdline -s { chronyd ${cmd_args} -u chrony } )
 
 [environment]
