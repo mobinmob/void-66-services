@@ -1,0 +1,16 @@
+[main]
+@type = classic
+@version = @VERSION@
+@description = "gitea daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@runas = _gitea
+@execute = ( 
+  execl-cmdline -s {
+  export USER _gitea 
+  export HOME /var/lib/gitea 
+  export GITEA_WORK_DIR $HOME 
+  gitea web --config /etc/gitea.conf }
+)
