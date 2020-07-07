@@ -26,4 +26,4 @@ files with variables in [environment].
 9. Try to keep frontend service files compact, simple and easy to understand.
 A user can always customise them and put the customised version in /etc/66/service.
 10. Development happens in a development branch. We create PRs against it.The
-current development branch is v0.0.4.x.
+current development branch is _devel_.
