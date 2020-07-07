@@ -1,0 +1,10 @@
+[main]
+@type = longrun
+@description = "bluetooth daemon"
+@version = @VERSION@ 
+@user = ( root )
+@options = ( log )
+@depends = ( dbus )
+
+[start]
+@execute = ( /usr/libexec/bluetooth/bluetoothd -n )

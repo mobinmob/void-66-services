@@ -1,12 +1,10 @@
 [main]
 @type = classic
-@description = "deluge daemon"
 @version = @VERSION@
+@description = "nullmailer daemon"
 @user = ( root )
 @options = ( log )
 
 [start]
-@runas = deluge
-@execute = ( deluged -d )
-
-
+@runas = _nullmail
+@execute = ( nullmailer-send )

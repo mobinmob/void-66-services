@@ -1,10 +1,9 @@
 [main]
 @type = longrun
 @version = @VERSION@
-@description = "avahi daemon"
+@description = "Virtual machine log manager"
 @user = ( root )
-@depends = ( dbus )
 @options = ( log )
 
 [start]
-@execute = ( avahi-daemon )
+@execute = ( virtlogd )

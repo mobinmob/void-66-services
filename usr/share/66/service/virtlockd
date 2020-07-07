@@ -1,0 +1,10 @@
+[main]
+@type = longrun
+@version = @VERSION@
+@description = "Virtual machine lock manager"
+@user = ( root )
+@depends = ( virtlockd-socket )
+@options = ( log )
+
+[start]
+@execute = ( virtlockd )

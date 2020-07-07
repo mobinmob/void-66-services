@@ -1,16 +1,16 @@
 [main]
 @type = classic
 @description = "chrony ntp daemon"
+@version = @VERSION@
 @user = ( root )
-@options = ( log )
+@options = ( log env )
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( install -d -m750 -o chrony -g chrony /var/run/chrony
-exec chronyd -n -u chrony 2>&1 )
+@execute = ( foreground { execl-toc -d /var/run/chrony -m0750 -u chrony -g chrony }
+ execl-cmdline -s { chronyd ${cmd_args} -u chrony } )
 
-[stop]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( s6-rmrf /var/run/chrony/chrony.pid )
+[environment]
+# The -d switch and -n switch both make chronyd run in the foreground.
+# -d sents logs to the stdout, so they end up in the logger.
+# -n sents logs to syslog Please see chronyd(8) for more options.
+cmd_args=!-d

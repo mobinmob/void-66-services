@@ -1,10 +1,15 @@
 [main]
-@type = classic
-@description = "LVM metadata cache daemon"
-@user = ( root )
-@options = ( log )
+@type= classic
+@version = @VERSION@
+@description= "lvm2 metadata daemon"
+@user= ( root )
+@options= ( log env )
 
 [start]
-@build = auto
-@execute = ( exec lvmetad -f )
+@execute=( execl-cmdline -s { lvmetad -f -p ${pid_path}/${pid_name} -s ${socket_path}/${socket_name} } )
 
+[environment]
+pid_path=!/run/lvm
+pid_name=!lvmetad.pid
+socket_path=!/run/lvm
+socket_name=!lvmetad.socket

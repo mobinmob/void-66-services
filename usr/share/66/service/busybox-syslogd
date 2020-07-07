@@ -1,8 +1,8 @@
 [main]
 @type = classic
 @description = "busybox kernel log daemon"
+@version = @VERSION@ 
 @user = ( root )
 
 [start]
-@build = auto
-@execute = ( exec busybox syslogd -n )
+@execute = ( busybox syslogd -n )

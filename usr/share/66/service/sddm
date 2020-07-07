@@ -1,17 +1,17 @@
 [main]
 @type = longrun
+@version = @VERSION@
 @description = "sddm daemon"
 @user = ( root )
 @options = ( log )
-@depends = ( dbus )
+@extdepends = ( dbus )
 @timeout-up = 3000
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( 
-# respect system locale
-[ -r /etc/locale.conf ] && . /etc/locale.conf && export LANG
-exec sddm 2>&1 )
+@execute = (
+  foreground { execl-toc -x /usr/bin/elogind-inhibit dbus-send --system --print-reply --dest=org.freedesktop.DBus /org/freedesktop/DBus org.freedesktop.DBus.StartServiceByName string:org.freedesktop.login1 uint32:0 }
+  execl-envfile -l /etc/locale.conf sddm
+)
 
-
+[stop]
+@execute = ( s6-rmrf /run/sddm )

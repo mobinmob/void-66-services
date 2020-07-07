@@ -1,13 +1,13 @@
 [main]
 @type = longrun
 @description = "conman daemon"
+@version = @VERSION@ 
 @options = ( log )
 @user = ( root )
 @depends = ( dbus )
 
 
 [start]
-@build = auto
 @execute = ( connmand -n )
 
 

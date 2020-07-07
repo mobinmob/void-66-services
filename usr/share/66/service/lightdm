@@ -1,11 +1,13 @@
 [main]
 @type = longrun
 @version = @VERSION@
-@description = "networkmanager daemon"
+@description = "lightdm daemon"
 @user = ( root )
 @options = ( log )
 @extdepends = ( dbus )
 
 [start]
-@execute = ( NetworkManager -n )
+@execute = ( lightdm )
 
+[stop]
+@execute = ( s6-rmrf /run/lightdm/root )

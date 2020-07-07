@@ -1,6 +1,7 @@
 [main]
 @type = classic
 @description = "rsync daemon"
+@version = @VERSION@ 
 @user = ( root )
 @options = ( log )
 

@@ -1,0 +1,12 @@
+[main]
+@type = oneshot
+@version = @VERSION@
+@description = "Start Wireguard interface"
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = ( wg-quick up @I )
+    
+[stop]
+@execute = ( wg-quick down @I )

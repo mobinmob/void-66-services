@@ -1,0 +1,21 @@
+[main]
+@type = longrun
+@version = @VERSION@
+@description = "elogind daemon"
+@user = ( root )
+@options = ( log env )
+@extdepends = ( dbus )
+
+[start]
+@execute = (
+  foreground { execl-toc -n -m /sys/fs/cgroup/elogind -t cgroup -o none,name=elogind -d cgroup /sys/fs/cgroup/elogind }
+  foreground { execl-toc -n -m /run/systemd -t tmpfs -o nosuid,nodev,noexec,mode=0755 -d none /run/systemd }
+  foreground { execl-toc -n -m /run/user -t tmpfs -o nosuid,nodev,noexec,mode=0755 -d none /run/user }
+  /usr/libexec/elogind/elogind
+)
+
+[stop]
+@execute = ( s6-rmrf ${pid_file} )
+
+[environment]
+pid_file=!/run/elogind.pid

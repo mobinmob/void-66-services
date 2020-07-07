@@ -1,11 +1,9 @@
 [main]
 @type = longrun
-@description = "wicd"
+@description = "SMART Disk Monitoring daemon"
 @version = @VERSION@ 
 @user = ( root )
-@depends = ( dbus )
 @options = ( log )
 
 [start]
-@execute = ( wicd -f )
-
+@execute = ( smartd -n )

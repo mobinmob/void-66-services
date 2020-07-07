@@ -1,11 +1,11 @@
 [main]
 @type = longrun
 @version = @VERSION@
-@description = "networkmanager daemon"
+@description = "Virtualization daemon"
 @user = ( root )
+@depends = ( virtlockd virtlogd )
 @options = ( log )
 @extdepends = ( dbus )
 
 [start]
-@execute = ( NetworkManager -n )
-
+@execute=( libvirtd )

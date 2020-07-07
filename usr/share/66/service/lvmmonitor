@@ -1,0 +1,13 @@
+[main]
+@type= oneshot
+@version = @VERSION@
+@description= "monitoring of lvm2 mirrors, snapshots ..."
+@user= ( root )
+@options= ( log )
+@depends= ( lvm2-lvmetad dm-event )
+
+[start]
+@execute=( lvm vgchange --monitor y --ignoreskippedcluster )
+
+[stop]
+@execute=( lvm vgchange --monitor n --ignoreskippedcluster )

@@ -1,8 +1,9 @@
 [main]
 @type = classic
 @description = "busybox getty daemon @ @I"
+@version = @VERSION@ 
 @user = ( root )
 
 [start]
 @build = auto
-@execute = ( exec busybox getty 38400 @I linux )
+@execute = ( busybox getty 38400 @I linux )

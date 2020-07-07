@@ -1,14 +1,9 @@
 [main]
 @type = classic
+@version = @VERSION@
 @description = "cronie daemon"
 @user = ( root )
-@options = ( log env )
+@options = ( log )
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( exec cronie-crond -n ${OPTS} 2>&1 )
-
-[environment]
-OPTS=
-
+@execute = ( cronie-crond -n )

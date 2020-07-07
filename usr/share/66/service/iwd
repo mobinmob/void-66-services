@@ -1,10 +1,9 @@
 [main]
 @type = longrun
+@description = "iNet Wireless Daemon"
 @version = @VERSION@
-@description = "avahi daemon"
 @user = ( root )
-@depends = ( dbus )
 @options = ( log )
 
 [start]
-@execute = ( avahi-daemon )
+@execute = ( /usr/libexec/iwd )

@@ -1,11 +1,11 @@
 [main]
 @type = classic
 @description = "deluge webui daemon"
+@version = @VERSION@
 @user = ( root )
 @options = ( log )
 
 [start]
-@build = auto
 @runas = deluge
 @execute = ( deluge-web -d )
 

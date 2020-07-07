@@ -1,12 +1,12 @@
 [main]
 @type = longrun
 @description = "hiawatha server"
+@version = @VERSION@
 @user = ( root )
 @options = ( log )
 
 
 [start]
-@build = auto
 @execute = ( hiawatha -d )
 
 

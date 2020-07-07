@@ -1,13 +1,13 @@
 [main]
 @type = classic
 @description = "sndio daemon"
+@version = @VERSION@ 
 @user = ( root )
 @options = ( log env )
 
 [start]
-@build = custom
-@shebang = "/bin/sh"
-@execute = ( exec sndiod ${OPTS} -d )
+@execute = ( execl-cmdline -s { sndiod ${cmd_args} -d } )
 
 [environment]
-OPTS=
+# Value is the default as a placeholder - parser cannot use empty values.
+cmd_args=!-a off

@@ -1,10 +1,10 @@
 [main]
 @type = longrun
 @description = "rsyslog daemon"
+@version = @VERSION@ 
 @user = ( root )
 @options = ( log )
 
 [start]
-@build = auto
 @execute = ( rsyslogd -n )
 

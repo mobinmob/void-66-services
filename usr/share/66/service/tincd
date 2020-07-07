@@ -1,9 +1,9 @@
 [main]
-@type = classic
-@description = "nix daemon"
+@type = longrun
+@description = "tinc vpn daemon"
 @version = @VERSION@ 
 @user = ( root )
 @options = ( log )
 
 [start]
-@execute = ( nix-daemon )
+@execute = ( tincd -D )
