@@ -1,0 +1,12 @@
+[main]
+@type = oneshot
+@version = @VERSION@
+@description = "Start binfmt support"
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = ( update-binfmts --enable )
+
+[stop]
+@execute = ( update-binfmts --disable )
