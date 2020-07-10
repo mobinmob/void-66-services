@@ -8,9 +8,11 @@
 
 [start]
 @execute = (
-  foreground { execl-toc -n -m /sys/fs/cgroup/elogind -t cgroup -o none,name=elogind -d cgroup /sys/fs/cgroup/elogind }
-  foreground { execl-toc -n -m /run/systemd -t tmpfs -o nosuid,nodev,noexec,mode=0755 -d none /run/systemd }
-  foreground { execl-toc -n -m /run/user -t tmpfs -o nosuid,nodev,noexec,mode=0755 -d none /run/user }
+  if {
+    foreground { execl-toc -X -m /sys/fs/cgroup/elogind -t cgroup -o none,name=elogind -d cgroup }
+    foreground { execl-toc -X -m /run/systemd -t tmpfs -o nosuid,nodev,noexec,mode=0755 -d none }
+    foreground { execl-toc -X -m /run/user -t tmpfs -o nosuid,nodev,noexec,mode=0755 -d none }
+  }
   /usr/libexec/elogind/elogind
 )
 
