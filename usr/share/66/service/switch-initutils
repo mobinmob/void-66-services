@@ -7,4 +7,4 @@
 [start]
 @build = custom
 @shebang = "/bin/sh -c"
-@execute = ( . /etc/runit/core-services/99-switch-initutils.sh )
+@execute = ( source /etc/runit/core-services/99-switch-initutils.sh )
