@@ -16,14 +16,17 @@ switches for the service to run (e.g. to keep it in the foreground).
 3. Every other switch should be under [environment] in *cmd_args* or other proper
 variables.
 4. *cmd_args* replaces *$OPTS* in scripts based on runit services.
-5. Obarun frontend files are obviously a fantastic source of information. Please
+5. [stop] section replaces the *finish* script of runit services. Other than
+that, [stop] may be used only if  it is needed or it whould substantially
+improve the service. 
+6. Obarun frontend files are obviously a fantastic source of information. Please
 be aware that sometimes the policies and/or assumptions of obarun are very
 different than those of voidlinux.
-6. Do not include configuration file paths or change default configuration
+7. Do not include configuration file paths or change default configuration
 files with variables in [environment].
 7. @version value should always be @VERSION@
-8. When using execline syntax in @execute, @build=auto may be ommited.
-9. Try to keep frontend service files compact, simple and easy to understand.
+9. When using execline syntax in @execute, @build=auto may be ommited.
+10. Try to keep frontend service files compact, simple and easy to understand.
 A user can always customise them and put the customised version in /etc/66/service.
-10. Development happens in a development branch. We create PRs against it.The
+11. Development happens in a development branch. We create PRs against it.The
 current development branch is _devel_.
