@@ -3,7 +3,7 @@
 @version = @VERSION@
 @description = "avahi daemon"
 @user = ( root )
-@depends = ( dbus )
+@extdepends = ( dbus )
 @options = ( log )
 
 [start]
