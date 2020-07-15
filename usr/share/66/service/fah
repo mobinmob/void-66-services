@@ -8,9 +8,7 @@
 [start]
 @runas = _fah
 @execute = (
-  if {
-    execl-toc -X -d /usr/libexec/_fah -m 0755 -u _fah -g _fah
-  }
+  execl-toc -d /usr/libexec/_fah -m 0755 -u _fah -g _fah
   /usr/bin/FAHClient --chdir /usr/libexec/_fah
 )
 
