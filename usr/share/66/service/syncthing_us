@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = @VERSION@
+@description = "syncthing daemon"
+@user = ( user )
+@options = ( log env )
+
+[start]
+@execute = ( execl-cmdline -s { syncthing -no-restart ${cmd_args} } )
+
+[environment]
+cmd_args=!-no-browser
