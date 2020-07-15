@@ -1,0 +1,15 @@
+[main]
+@type = classic
+@version = @VERSION@
+@description = "android debug bridge daemon"
+@user = ( root )
+@options = ( log env )
+
+[start]
+@execute = ( execl-cmdline -s { s6-fghack adb ${cmd_args} } )
+
+[stop]
+@execute = ( adb kill-server )
+
+[environment]
+cmd_args=!start-server -P5037
