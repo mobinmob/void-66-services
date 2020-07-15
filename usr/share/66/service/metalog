@@ -3,10 +3,10 @@
 @version = @VERSION@
 @description = "metalog daemon"
 @user = ( root )
-@options = ( log env )
+@options = ( log )
 
 [start]
-@execute = ( execl-cmdline -s { metalog -v −−pidfile=${pid_name} } )
+@execute = ( metalog -v −−pidfile=/run/metalog.pid )
 
 [stop]
 @execute = (
@@ -18,6 +18,3 @@
 	}
 	s6-rmrf ${pid_name}
 )
-
-[environment]
-pid_name=!/run/metalog.pid
