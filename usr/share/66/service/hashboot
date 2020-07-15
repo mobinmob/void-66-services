@@ -4,7 +4,10 @@
 @description = "hashboot service"
 @user = ( root )
 @options = ( env )
- 
+
+# right now, its best to create own tree for hashboot and
+# start it before all other trees (especially network cfg): 66-tree -S hashboot hashboot
+
 [start]
 @execute =
 (
