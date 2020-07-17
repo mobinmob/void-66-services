@@ -6,7 +6,7 @@
 @options = ( log env )
 
 [start]
-@execute = ( execl-cmdline -s { syncthing -no-restart ${cmd_args} } )
+@execute = ( execl-cmdline -s { syncthing ${cmd_args} } )
 
 [environment]
-cmd_args=!-no-browser
+cmd_args=!-no-restart -no-browser
