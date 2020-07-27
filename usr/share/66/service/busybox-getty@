@@ -1,3 +1,4 @@
+#The service takes a tty as @I, e.g. busybox-getty@tty6
 [main]
 @type = classic
 @description = "busybox getty daemon @ @I"

@@ -1,3 +1,4 @@
+# The service takes the network interface device name as @I - e.g. dhcpcd@wlp0s18f2u5
 [main]
 @type = classic
 @version = @VERSION@

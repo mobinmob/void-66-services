@@ -1,3 +1,4 @@
+# The service takes the confing file as @I, which becomes the device name.
 [main]
 @type = oneshot
 @version = @VERSION@
