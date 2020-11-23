@@ -3,9 +3,15 @@
 @version = @VERSION@
 @description = "networkmanager daemon"
 @user = ( root )
-@options = ( log )
+@options = ( log env )
 @extdepends = ( dbus )
 
 [start]
-@execute = ( NetworkManager -n )
+@execute = ( execl-cmdline -s { NetworkManager ${cmd_args} }  )
+
+[environment]
+# Necessary switches are either -d or -n. -n is for --no-daemon,
+# -d is for --debug. -d is preferred as it directs log output to 
+# the stdout as well as syslog.
+cmd_args=! -d
 
