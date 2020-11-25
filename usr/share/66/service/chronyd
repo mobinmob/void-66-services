@@ -6,8 +6,10 @@
 @options = ( log env )
 
 [start]
-@execute = ( foreground { execl-toc -d /var/run/chrony -m0750 -u chrony -g chrony }
- execl-cmdline -s { chronyd ${cmd_args} -u chrony } )
+@execute = ( 
+  execl-toc -d /var/run/chrony -m0750 -u chrony -g chrony
+  execl-cmdline -s { chronyd ${cmd_args} -u chrony }
+)
 
 [environment]
 # The -d switch and -n switch both make chronyd run in the foreground.

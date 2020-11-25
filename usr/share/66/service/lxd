@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = @VERSION@
+@description = "lxd service"
+@options = ( log )
+@user = ( root )
+@maxdeath = 3
+
+[start]
+@execute = (
+  if { execl-toc -X -m /sys/fs/cgroup/systemd -t cgroup -o none,name=systemd -d cgroup }
+  lxd --group lxd --verbose
+)

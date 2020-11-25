@@ -9,5 +9,5 @@
 @build = auto
 @execute = ( 
 	foreground { exec ssh-keygen -A } 
-	execl-cmdline -s { /usr/sbin/sshd -e -D }
+	/usr/sbin/sshd -e -D
 )

@@ -1,3 +1,12 @@
+# This oneshot service checks for /usr/bin/{reboot,poweroff,halt,shutdown}
+# and if they are part of runit-void it renames them and copies the 66 
+# utilities in their place. It must be enabled, especially if one
+# changes between the two init systems. There is a similar script in
+# runit core-services -part of the boot-66serv package- that does the
+# opposite and runs by default with runit. 
+# The service makes sure that the user has the proper utilities for the 
+# init system they are currently running. 
+
 [main]
 @type = oneshot
 @version = @VERSION@
@@ -6,5 +15,14 @@
 
 [start]
 @build = custom
-@shebang = "/bin/sh"
-@execute = ( /etc/runit/core-services/99-switch-initutils.sh )
+@shebang = "/bin/sh -c"
+@execute = ( 
+if grep -q "init=/usr/bin/66" /proc/cmdline; then
+       for i in reboot poweroff halt shutdown; do
+               if ! test -e /usr/bin/${i}.runit; then
+                       mv /usr/bin/${i} /usr/bin/${i}.runit
+                       cp /etc/66/${i} /usr/bin/${i}
+               fi
+       done
+fi
+)

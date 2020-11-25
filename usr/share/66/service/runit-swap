@@ -1,0 +1,12 @@
+[main]
+@type = oneshot
+@version = @VERSION@
+@description = "Manage swapspaces"
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = ( runit-swap start )
+
+[stop]
+@execute = ( runit-swap stop )
