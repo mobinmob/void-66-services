@@ -6,8 +6,7 @@
 @options = ( log )
 
 [start]
-@build = auto
 @execute = ( 
-	foreground { exec ssh-keygen -A } 
+	foreground { exec ssh-keygen -A }
 	/usr/sbin/sshd -e -D
 )

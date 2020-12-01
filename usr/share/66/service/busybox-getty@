@@ -5,5 +5,4 @@
 @user = ( root )
 
 [start]
-@build = auto
 @execute = ( busybox getty 38400 @I linux )
