@@ -2,10 +2,9 @@
 [main]
 @type = classic
 @description = "Start busybox udhcpc for @I interface "
-@version = @VERSION@ 
+@version = @VERSION@
 @user = ( root )
 @options = ( log )
 
 [start]
-@build = auto
 @execute = ( busybox udhcpc -f -i @I )
