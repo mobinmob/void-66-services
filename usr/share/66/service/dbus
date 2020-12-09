@@ -5,18 +5,11 @@
 @user = ( root )
 @maxdeath = 3
 @notify = 4
-@options = ( log env )
+@options = ( log )
 @timeout-up = 3000
 
 [start]
 @execute = (
-	execl-toc -S ${socket_name} -m 0755 -g dbus -u dbus
-	execl-cmdline -s { dbus-daemon --nofork --nopidfile --system --print-pid=4 ${cmd_args} }
+	execl-toc -d /run/dbus  -m 755 -g 22 -u 22
+	dbus-daemon --nofork --nopidfile --system --print-pid=4
 )
-
-[stop]
-@execute = ( s6-rmrf ${socket_name} )
-
-[environment]
-cmd_args=!--address=unix:path=/run/dbus/system_bus_socket
-socket_name=!/run/dbus/system_bus_socket
