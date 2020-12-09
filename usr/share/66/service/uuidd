@@ -1,0 +1,14 @@
+[main]
+@type = classic
+@version = @VERSION@
+@description = "UUID generation daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = (
+        execl-toc -d /run/uuidd
+        foreground { chown _uuidd:_uuidd /run/uuidd }
+        s6-setuidgid _uuidd uuidd -F -P
+ )
+
