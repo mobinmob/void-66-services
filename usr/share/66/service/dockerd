@@ -8,10 +8,9 @@
 
 [start]
 @execute = (
-  foreground { execl-toc -n -m /sys/fs/cgroup/systemd -t cgroup -o none,name=systemd -d cgroup /sys/fs/cgroup/systemd }
-  execl-toc -S ${socket} -m 0660
-  if { chown root:docker ${socket} }
-  chpst -o 1048576 -p 1048576 dockerd -H unix://${socket}
+  execl-toc -m /sys/fs/cgroup/systemd -t cgroup -o none,name=systemd -d cgroup
+  execl-toc -S ${socket} -m 0660 -u root -g docker
+  s6-softlimit -o 1048576 -p 1048576 dockerd -H unix://${socket}
 )
 
 [environment]
