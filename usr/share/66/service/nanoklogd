@@ -1,8 +1,8 @@
 [main]
 @type = classic
 @description = "nano kernel log daemon"
-@version = @VERSION@ 
+@version = @VERSION@
 @user = ( root )
 
 [start]
-@execute = ( chpst -u nobody:nogroup nanoklogd )
+@execute = ( s6-setuidgid nobody nanoklogd )
