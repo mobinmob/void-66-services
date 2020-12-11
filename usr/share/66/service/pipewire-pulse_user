@@ -1,0 +1,10 @@
+[main]
+@type = longrun
+@description = "pipewire pulseaudio"
+@version = @VERSION@
+@user = ( user )
+@options = ( log )
+@extdepends = ( pipewire_user )
+
+[start]
+@execute = ( pipewire-pulse )

@@ -1,0 +1,9 @@
+[main]
+@type = longrun
+@description = "pipewire multimedia service"
+@version = @VERSION@
+@user = ( user )
+@options = ( log )
+
+[start]
+@execute = ( pipewire )
