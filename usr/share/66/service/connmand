@@ -4,7 +4,7 @@
 @version = @VERSION@ 
 @options = ( log )
 @user = ( root )
-@depends = ( dbus )
+@extdepends = ( dbus )
 
 
 [start]
