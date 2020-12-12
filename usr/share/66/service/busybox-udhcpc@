@@ -1,10 +1,10 @@
+# The service takes the network interface device name as @I - e.g. budybox-udhcp@wlp0s18f2u5
 [main]
 @type = classic
 @description = "Start busybox udhcpc for @I interface "
-@version = @VERSION@ 
+@version = @VERSION@
 @user = ( root )
 @options = ( log )
 
 [start]
-@build = auto
 @execute = ( busybox udhcpc -f -i @I )

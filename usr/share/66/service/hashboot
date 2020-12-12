@@ -1,0 +1,22 @@
+[main]
+@type = oneshot
+@version = @VERSION@
+@description = "hashboot service"
+@user = ( root )
+@options = ( env )
+
+# right now, its best to create own tree for hashboot and
+# start it before all other trees (especially network cfg): 66-tree -S hashboot hashboot
+
+[start]
+@execute =
+(
+    if { 66-yeller -cdp hashboot -1 /dev/console starts... }
+    if -nt {
+    hashboot check
+    }
+    ${crash}
+)
+ 
+[environment]
+crash=!/etc/66/ishell

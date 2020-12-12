@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@version = @VERSION@
+@description = "bftpd server daemon"
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = ( bftpd -D )

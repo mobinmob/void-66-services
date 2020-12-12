@@ -8,7 +8,7 @@
 [start]
 @build = custom
 @shebang = "/bin/sh"
-@execute = ( exec 2>1
+@execute = ( exec 2>&1
  [ ! -e /etc/rsyncd.conf ] && exit 1
 exec rsync --daemon --no-detach )
 

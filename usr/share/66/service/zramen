@@ -1,0 +1,20 @@
+[main]
+@type = oneshot
+@version = @VERSION@
+@description = "Manage zram swap space"
+@user = ( root )
+@options = ( log )
+
+[start]
+@build=custom
+@shebang = "/bin/sh -c"
+@execute = (
+#export ZRAM_COMP_ALGORITHM=lz4
+#export ZRAM_PRIORITY=32767
+#export ZRAM_SIZE=25
+#export ZRAM_STREAMS=1
+zramen make )
+
+[stop]
+@execute = ( zramen toss )
+
