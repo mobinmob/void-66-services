@@ -7,8 +7,7 @@
 
 [start]
 @execute = (
-        execl-toc -d /run/uuidd
-        foreground { chown _uuidd:_uuidd /run/uuidd }
+        execl-toc -d /run/uuidd -g _uuidd -u uuidd
         s6-setuidgid _uuidd uuidd -F -P
  )
 
