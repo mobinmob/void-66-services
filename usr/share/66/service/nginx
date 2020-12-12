@@ -7,6 +7,6 @@
 
 [start]
 @execute = (
-         foreground { execl-toc -d /run/nginx -m 0710 -g nginx -u root }
-         nginx -g "daemon off;"
+	 execl-toc -d /run/nginx -m 0710 -g nginx -u root
+	 nginx -g "daemon off;"
 )
