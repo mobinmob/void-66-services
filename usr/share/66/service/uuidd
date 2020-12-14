@@ -6,8 +6,7 @@
 @options = ( log )
 
 [start]
-@execute = (
-        execl-toc -d /run/uuidd -g _uuidd -u uuidd
-        s6-setuidgid _uuidd uuidd -F -P
+@execute = ( 
+        execl-toc -d /run/uuidd -g _uuidd -u _uuidd s6-setuidgid _uuidd uuidd -F -P
  )
 
