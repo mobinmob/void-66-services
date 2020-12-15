@@ -6,4 +6,4 @@
 @options = ( log )
 
 [start]
-@execute = ( unbound -dp )
+@execute = ( unbound -ddp )
