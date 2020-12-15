@@ -4,7 +4,7 @@
 @version = @VERSION@ 
 @user = ( root )
 @options = ( log )
-@depends = ( dbus )
+@extdepends = ( dbus )
 
 [start]
 @execute = ( /usr/libexec/bluetooth/bluetoothd -n )

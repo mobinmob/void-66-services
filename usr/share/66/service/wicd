@@ -3,7 +3,7 @@
 @description = "wicd"
 @version = @VERSION@ 
 @user = ( root )
-@depends = ( dbus )
+@extdepends = ( dbus )
 @options = ( log )
 
 [start]
