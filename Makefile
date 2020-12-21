@@ -1,11 +1,10 @@
-VERSION=0.0.1
-DESTDIR= 
+
+DESTDIR ?= 
 
 all: install
 
 install:
-	install -m 644 usr/share/66/service/*  "${DESTDIR}"/usr/share/66/service/
-	cd "${DESTDIR}"/usr/share/66/service/ && \
-		find . -type f -name "*" -print0 | xargs -0 sed -i "s/@VERSION@/${VERSION}/g"
+	mkdir -p $(DESTDIR)/usr/share/66/service/
+	install -m 644 usr/share/66/service/*  $(DESTDIR)/usr/share/66/service/
 
 .PHONY: all install
