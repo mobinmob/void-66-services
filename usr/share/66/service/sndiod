@@ -1,7 +1,7 @@
 [main]
 @type = classic
 @description = "sndio daemon"
-@version = @VERSION@ 
+@version = 0.0.1 
 @user = ( root )
 @options = ( log env )
 

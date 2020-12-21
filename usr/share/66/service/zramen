@@ -1,6 +1,6 @@
 [main]
 @type = oneshot
-@version = @VERSION@
+@version = 0.0.1
 @description = "Manage zram swap space"
 @user = ( root )
 @options = ( log )

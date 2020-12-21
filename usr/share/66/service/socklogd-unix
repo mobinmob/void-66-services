@@ -1,9 +1,0 @@
-[main]
-@type = classic
-@version = @VERSION@
-@description = "socklog daemon"
-@user = ( root )
-@options = ( log )
-
-[start]
-@execute = ( s6-envuidgid -u nobody socklog unix /dev/log )

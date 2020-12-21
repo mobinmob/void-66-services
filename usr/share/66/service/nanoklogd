@@ -1,7 +1,7 @@
 [main]
 @type = classic
 @description = "nano kernel log daemon"
-@version = @VERSION@
+@version = 0.0.1
 @user = ( root )
 
 [start]

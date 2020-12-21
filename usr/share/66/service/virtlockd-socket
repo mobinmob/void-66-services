@@ -1,6 +1,6 @@
 [main]
 @type = oneshot
-@version = @VERSION@
+@version = 0.0.1
 @description = "Virtual machine lock manager socket"
 @user = ( root )
 @options = ( log env )

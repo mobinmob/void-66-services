@@ -1,6 +1,6 @@
 [main]
 @type = oneshot
-@version = @VERSION@
+@version = 0.0.1
 @description = "Restore and store sound card state"
 @user = ( root )
 @options = ( log )
