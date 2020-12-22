@@ -1,0 +1,15 @@
+[main]
+@type = longrun
+@version = 0.0.1
+@description = "syslog daemon"
+@user = ( root )
+@options = ( log )
+@notify = 3
+
+[start]
+@execute = ( exec -c
+s6-envuidgid nobody
+fdmove 1 3
+s6-ipcserver -U -1 -- /dev/log
+fdmove -c 1 2
+ucspilogd IPCREMOTEEUID IPCREMOTEEGID )
