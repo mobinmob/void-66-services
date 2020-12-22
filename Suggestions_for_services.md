@@ -24,7 +24,8 @@ be aware that sometimes the policies and/or assumptions of obarun are very
 different than those of voidlinux.
 7. Do not include configuration file paths or change default configuration
 files with variables in [environment].
-8. @version value should always be @VERSION@
+8. Every new frontend service file is released originally with a @version value of 0.0.1 and
+is incremented in the following releases only if there a change.
 9. When using execline syntax in @execute, @build=auto may be ommited.
 10. Try to keep frontend service files compact, simple and easy to understand.
 A user can always customise them and put the customised version in /etc/66/service.

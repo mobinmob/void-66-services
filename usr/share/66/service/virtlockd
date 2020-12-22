@@ -1,6 +1,6 @@
 [main]
 @type = longrun
-@version = @VERSION@
+@version = 0.0.1
 @description = "Virtual machine lock manager"
 @user = ( root )
 @depends = ( virtlockd-socket )

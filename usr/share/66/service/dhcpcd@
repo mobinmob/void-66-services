@@ -1,7 +1,7 @@
 # The service takes the network interface device name as @I - e.g. dhcpcd@wlp0s18f2u5
 [main]
 @type = classic
-@version = @VERSION@
+@version = 0.0.1
 @description = "dhcpcd daemon for @I"
 @user = ( root )
 @options = ( log )

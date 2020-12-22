@@ -2,7 +2,7 @@
 [main]
 @type = classic
 @description = "busybox getty daemon @ @I"
-@version = @VERSION@ 
+@version = 0.0.1 
 @user = ( root )
 
 [start]

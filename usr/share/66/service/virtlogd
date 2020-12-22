@@ -1,6 +1,6 @@
 [main]
 @type = longrun
-@version = @VERSION@
+@version = 0.0.1
 @description = "Virtual machine log manager"
 @user = ( root )
 @options = ( log )
