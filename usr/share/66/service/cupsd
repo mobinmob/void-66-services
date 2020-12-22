@@ -1,6 +1,6 @@
 [main]
 @type = classic
-@version = @VERSION@
+@version = 0.0.1
 @description = "cups daemon"
 @user = ( root )
 @options = ( log )

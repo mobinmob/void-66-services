@@ -1,7 +1,7 @@
 [main]
 @type = classic
 @description = "busybox kernel log daemon"
-@version = @VERSION@ 
+@version = 0.0.1 
 @user = ( root )
 
 [start]

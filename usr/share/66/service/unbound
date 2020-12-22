@@ -1,9 +1,9 @@
 [main]
 @type = classic
 @description = "Unbound DNS validating resolver daemon"
-@version = @VERSION@ 
+@version = 0.0.1 
 @user = ( root )
 @options = ( log )
 
 [start]
-@execute = ( unbound -dp )
+@execute = ( unbound -ddp )

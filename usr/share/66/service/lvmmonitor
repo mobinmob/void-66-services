@@ -1,6 +1,6 @@
 [main]
 @type= oneshot
-@version = @VERSION@
+@version = 0.0.1
 @description= "monitoring of lvm2 mirrors, snapshots ..."
 @user= ( root )
 @options= ( log )
