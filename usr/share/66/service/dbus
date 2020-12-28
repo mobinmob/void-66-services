@@ -6,7 +6,7 @@
 @maxdeath = 3
 @notify = 4
 @options = ( log )
-@timeout-up = 3000
+@timeout-up = 6000
 
 [start]
 @execute = (
