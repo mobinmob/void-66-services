@@ -1,0 +1,13 @@
+[main]
+@type= classic
+@version = 0.0.1
+@description= "device-mapper event daemon"
+@user= ( root )
+@options= ( log env )
+
+[start]
+@execute=( execl-cmdline -s { dmeventd -f ${cmd_args} } )
+
+[environment]
+#-d is for the debug level, -l is logging to the per-service logger  
+cmd_args=!-d -l
