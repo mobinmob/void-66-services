@@ -1,0 +1,11 @@
+[main]
+@type= classic
+@version = 0.0.1
+@description= "wesnoth daemon"
+@user= ( root )
+@options= ( log )
+
+[start]
+@execute=(
+	execl-toc -d /run/wesnoth -m 0700
+	wesnothd  )
