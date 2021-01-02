@@ -1,0 +1,12 @@
+[main]
+@type = oneshot
+@version = 0.0.1
+@description = "shorewall gateway-firewall configuration tool"
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = ( shorewall6 start )
+
+[stop]
+@execute = ( shorewall6 stop )

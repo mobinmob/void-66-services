@@ -1,0 +1,14 @@
+[main]
+@type = oneshot
+@version = 0.0.1
+@description = "control drbd"
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = ( /usr/libexec/drbd start )
+
+[stop]
+@execute = ( /usr/libexec/drbd stop )
+
+
