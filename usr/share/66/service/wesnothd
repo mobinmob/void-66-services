@@ -3,7 +3,6 @@
 @version = 0.0.1
 @description= "wesnoth daemon"
 @user= ( root )
-@options= ( log )
 
 [start]
 @execute=(

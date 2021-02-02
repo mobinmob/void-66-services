@@ -2,7 +2,6 @@
 @type = classic
 @version = 0.0.1
 @description = " dhcp daemon for v4 protocol "
-@options = ( log env )
 @user = ( root )
 
 [start]

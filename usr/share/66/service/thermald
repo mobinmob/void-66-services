@@ -3,7 +3,6 @@
 @version = 0.0.1
 @description = "thermal daemon"
 @user = ( root )
-@options = ( log )
 @extdepends = ( dbus )
 
 [start]

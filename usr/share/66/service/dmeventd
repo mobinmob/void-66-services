@@ -3,7 +3,6 @@
 @version = 0.0.1
 @description= "device-mapper event daemon"
 @user= ( root )
-@options= ( log env )
 
 [start]
 @execute=( execl-cmdline -s { dmeventd -f ${cmd_args} } )

@@ -3,7 +3,6 @@
 @version = 0.0.1
 @description= "macbook fan control daemon"
 @user= ( root )
-@options= ( log )
 
 [start]
 @execute=( mbpfan -f )
