@@ -3,7 +3,6 @@
 @version = 0.0.1
 @description = "control firehol"
 @user = ( root )
-@options = ( log )
 
 [start]
 @execute = ( execl-toc -e /etc/firehol/firehol.conf

@@ -3,7 +3,6 @@
 @version = 0.0.1
 @description = "odroid led control"
 @user = ( root )
-@options = ( log )
 
 [start]
 @execute = ( odroid-led )

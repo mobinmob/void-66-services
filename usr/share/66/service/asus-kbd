@@ -3,7 +3,6 @@
 @version = 0.0.1
 @description = "asus keyboard backlight control"
 @user = ( root )
-@options = ( log )
 
 [start]
 @execute = ( asus-kbd-backlight allowusers )
