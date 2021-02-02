@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "NetBIOS name server"
+@user = ( root )
+@options = ( log )
+
+[start]
+@execute = ( nmbd -F -S --no-process-group )
