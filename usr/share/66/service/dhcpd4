@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = " dhcp daemon for v4 protocol "
+@user = ( root )
+
+[start]
+@execute = ( foreground { touch /var/lib/dhcp/dhcpd.leases }
+	execl-cmdline -s { dhcpd -f ${cmd_args} }  )
+
+[environment]
+cmd_args=!-d -4 -q -pf /run/dhcpd4.pid

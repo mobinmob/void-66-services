@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = " general purpose mouse daemon "
+@user = ( root )
+
+[start]
+@execute = ( gpm -D -m /dev/input/mice -t imps2 )
+
