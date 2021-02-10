@@ -1,15 +1,14 @@
 [main]
 @type = longrun
-@version = 0.0.1
+@version = 0.0.2
 @description = "dbus system daemon"
 @user = ( root )
 @maxdeath = 3
-@notify = 4
-@options = ( log )
-@timeout-up = 3000
+@notify = 3
+@hiercopy = ( data )
 
 [start]
 @execute = (
 	execl-toc -d /run/dbus  -m 755 -g 22 -u 22
-	dbus-daemon --nofork --nopidfile --system --print-pid=4
+	exec s6-notifyoncheck dbus-daemon --nofork --system --nopidfile
 )
