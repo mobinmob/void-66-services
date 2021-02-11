@@ -1,0 +1,11 @@
+[main]
+@type = oneshot
+@version = 0.0.1
+@description = "lxc autostart"
+@user = ( root )
+
+[start]
+@execute = ( lxc-autostart )
+
+[stop]
+@execute = ( lxc-autostart -s -t 15 )
