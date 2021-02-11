@@ -1,0 +1,9 @@
+[main]
+@type = oneshot
+@version = 0.0.1
+@description = "asus keyboard backlight control"
+@user = ( root )
+
+[start]
+@execute = ( asus-kbd-backlight allowusers )
+

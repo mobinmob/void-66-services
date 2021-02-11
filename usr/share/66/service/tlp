@@ -1,0 +1,12 @@
+[main]
+@type = oneshot
+@version = 0.0.1
+@description = "control tlp - advanced power management tool"
+@user = ( root )
+
+[start]
+@execute = ( tlp init start )
+
+[stop]
+@execute = ( tlp init stop )
+
