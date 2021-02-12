@@ -1,0 +1,24 @@
+# Template file for 'void-66-services-master'
+pkgname=void-66-services-master
+version=0.0.0.master
+revision=1
+wrksrc=void-66-services
+hostmakedepends="git"
+depends="66"
+short_desc="66 service frontend files for voidlinux"
+maintainer="mobinmob <mobinmob@disroot.org>"
+license="BSD-2-Clause"
+homepage="https://github.com/mobinmob/void-66-services/"
+replaces="void-66-services>=0 void-66-services-devel>=0"
+
+do_fetch() {
+	git clone https://github.com/mobinmob/void-66-services ${wkrsrc}
+}
+
+do_install() {
+	vmkdir usr
+	vcopy usr /
+	chmod +x "${DESTDIR}/usr/share/66/service/dbus/data/check"
+	vlicense LICENSE
+	vlicense AUTHORS
+}
