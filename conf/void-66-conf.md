@@ -1,8 +1,8 @@
-# 66
+﻿# 66
 
 ## 1. Overview
 
-> Sixty-six is a collection of system tools built around s6 and s6-rc created to make the implementation and manipulation of service files on your machine easier. It is meant to be a toolbox for the declaration, implementation and administration of services where seperate programs can be joined to achieve powerful functionality with small amounts of code.
+> Sixty-six is a collection of system tools built around s6 and s6-rc created to make the implementation and manipulation of service files on your machine easier. It is meant to be a toolbox for the declaration, implementation and administration of services where separate programs can be joined to achieve powerful functionality with small amounts of code.
 
 [project page](https://web.obarun.org/software/66/v0.6.0.0/)
 
@@ -27,12 +27,12 @@ There are two ways to create the recommended basic trees for 66, an automatic an
 
 - Run the `66boot-initial-setup` script:
 
-_(commands prefixed by #  are given with elevated provileges - as root)_
+_(commands prefixed by # are given with elevated privileges - as root)_
 ```
 # 66boot-initial-setup
 ```
 
-The script creates the neccessary trees, enables in them some services and created the target for the basic configuration file symlink.
+The script creates the necessary trees, enables in them some services and created the target for the basic configuration file symlink.
 
 
 ### 3.2 Manual configuration
@@ -40,7 +40,7 @@ The script creates the neccessary trees, enables in them some services and creat
 #### 3.2.1 The `boot` tree
 
 - Create a mandatory **n**ew tree `boot` and enable the boot@system service in it:
-_(commands prefixed by #  are given with elevated provileges - as root)_
+_(commands prefixed by #  are given with elevated privileges - as root)_
 ```
 # 66-tree -n boot  
 # 66-enable -F -t boot boot@system
@@ -66,8 +66,8 @@ More services can be enabled in a different tree, that starts after the boot tre
 
 #### 3.2.3 Using runit services
 
-66 can work with the existing runit services. That is usefull as there are not yet frontend service files for all the packages that have a runit service directory.
-To use runit services, a seperate runit tree can be created, the runit service enabled and started in it and make the tree start after default:
+66 can work with the existing runit services. That is useful as there are not yet frontend service files for all the packages that have a runit service directory.
+To use runit services, a separate runit tree can be created, the runit service enabled and started in it and make the tree start after default:
 
 ```
 # 66-tree -nE runit
@@ -80,7 +80,7 @@ The runit services are started the normal way, by symlinking the service directo
 
 ### 3.3 Finalising configuration
 
-Both methods lead to the same basic trees created and services enabled. But before changing the init system, some more configuration must happer.
+Both methods lead to the same basic trees created and services enabled. But before changing the init system, some more configuration must happen.
 
 - Edit the **/etc/66rc.conf** with a text editor, save it and re-enable the `boot@system` service file in the `boot` tree:
 
