@@ -1,0 +1,13 @@
+[main]
+@type = oneshot
+@version = 0.0.1
+@description = "control firehol"
+@user = ( root )
+
+[start]
+@execute = ( execl-toc -e /etc/firehol/firehol.conf
+	firehol start )
+
+[stop]
+@execute = ( firehol stop )
+

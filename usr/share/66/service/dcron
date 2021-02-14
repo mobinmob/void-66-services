@@ -1,13 +1,10 @@
 [main]
 @type = classic
 @description = "dcron daemon"
-@version = 0.0.1 
+@version = 0.0.2
 @user = ( root )
-@options = ( log )
-# https://github.com/dubiousjim/dcron/issues/13
-@flags = ( nosetsid )
+@notify = 3
 
 [start]
-@execute = ( dcrond -f )
-
-
+# https://github.com/dubiousjim/dcron/issues/13
+@execute = ( 66-ns -d 3 -o unshare=pid dcrond -f )

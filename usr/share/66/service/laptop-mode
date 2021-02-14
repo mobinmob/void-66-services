@@ -1,0 +1,12 @@
+[main]
+@type = oneshot
+@version = 0.0.1
+@description = "laptop mode"
+@user = ( root )
+
+[start]
+@execute = ( laptop_mode init auto )
+
+[stop]
+@execute = ( laptop_mode init stop )
+
