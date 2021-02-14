@@ -59,12 +59,6 @@ More services can be enabled in a different tree, that starts after the boot tre
 # 66-tree -nEc default
 ```
 
-- Make it start after the boot tree:
-
-```
-# 66-tree -S boot default
-```
-
 - Enable services in the new tree -the switch-initutils services is recommended:
 ```
 # 66-enable switch-initutils
@@ -77,7 +71,7 @@ To use runit services, a seperate runit tree can be created, the runit service e
 
 ```
 # 66-tree -nE runit
-# 66-enable -t runit -S runit
+# 66-enable -t runit runit
 # 66-tree -S default runit
 ```
 
