@@ -1,9 +1,13 @@
 [main]
 @type = longrun
 @description = "SMART Disk Monitoring daemon"
-@version = 0.0.1 
+@version = 0.0.2 
 @user = ( root )
-@options = ( log )
 
 [start]
-@execute = ( smartd -n )
+@execute = ( execl-cmdline -s { smartd ${cmd_args} } )
+
+[environment]
+# -d does not fork and sends logs to stdout, -n does not fork
+# for more information, see the man page.
+cmd_args=! -d
