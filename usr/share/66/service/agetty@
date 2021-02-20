@@ -1,0 +1,12 @@
+#The service takes a tty as @I, e.g. agetty@tty6
+[main]
+@type = classic
+@version = 0.0.1
+@description = "Launch agetty @ @I"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { agetty ${cmd_args} @I } )
+
+[environment]
+cmd_args=!-J 38400
