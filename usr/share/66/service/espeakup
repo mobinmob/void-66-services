@@ -1,0 +1,10 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "Launch espeakup"
+@user = ( root )
+
+[start]
+@execute = (
+if { modprobe speakup_soft start=1 }
+espeakup -d )
