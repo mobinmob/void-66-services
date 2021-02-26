@@ -1,7 +1,7 @@
 [main]
 @type = classic
 @description = "dcron daemon"
-@version = 0.0.2
+@version = 0.0.3
 @user = ( root )
 @notify = 3
 
