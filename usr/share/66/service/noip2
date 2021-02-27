@@ -1,0 +1,8 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "noip2 service"
+@user = ( root )
+
+[start]
+@execute = ( noip2 -f )
