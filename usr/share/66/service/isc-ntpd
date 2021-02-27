@@ -1,9 +1,11 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "ntpd daemon"
 @user = ( root )
-@options = ( log )
 
 [start]
-@execute = ( ntpd -g -u ntpd:ntpd )
+@execute = ( execl-cmdline -s { isc-ntpd -n -u ntpd:ntpd ${cmd_args} } )
+
+[environment]
+cmd_args=!-g
