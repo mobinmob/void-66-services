@@ -11,13 +11,38 @@
 
 ## 2. Installation
 
-- Install the `boot-66serv` and `void-66-services` packages. Currently these packages are in a [PR](https://github.com/void-linux/void-packages/pull/25743), so one needs to build them first.
+The `boot-66serv` and `void-66-services` packages are needed to boot and use 66 as init and service manager on voidlinux. 
 
 `boot-66serv` contains the `boot@` module service, which, along with other frontend files and scripts, are used for the first stage of booting a system. It is rougly analogous to the runit-void package for runit as it initialises the system (setting hostname, timezone, open luks devices, etc) and starts agetty on tty1-4 by default. The package was created as a portable stage1 for 66 and is used in the [Obarun](http://obarun.org/) distribution.
 The package also contains some scripts written in order to make the services work for Void Linux.
 
 `void-66-services` contains service frontend files for Void Linux.
  
+ Currently these packages are in a [PR](https://github.com/void-linux/void-packages/pull/25743). In order to install them one can build them from the PR or install them from the unofficial void-66 repo.
+
+ ### 2.1 Installing packages from the void-66 repo.
+ - Add the repo:
+
+_(commands prefixed by # are given with elevated privileges - as root)_
+ ```
+ # echo "repository=https://codeberg.org/mobinmob/void-66/raw/branch/master/" > /etc/xbps.d/50-repository-unofficial-void-66.conf
+ ```
+- Sync the new repo and accept the sigining key:
+ ```
+ # xbps-install -Sy
+ ```
+
+You will be prompted to accept the new key:
+```
+  https://codeberg.org/mobinmob/void-66/raw/branch/master/ repository has been RSA signed by "mobinmob <mobinmob@disroot.org>"
+Fingerprint: c7:39:79:a3:2a:cf:f1:65:a6:df:3a:1a:6e:93:36:28
+Do you want to import this public key? [Y/n] 
+```
+- After accepting it, install the new packages:
+```
+# xbps-install boot-66serv void-66-services
+```
+
 
 ## 3. Configuration
 
@@ -40,7 +65,7 @@ The script creates the necessary trees, enables in them some services and create
 #### 3.2.1 The `boot` tree
 
 - Create a mandatory **n**ew tree `boot` and enable the boot@system service in it:
-_(commands prefixed by #  are given with elevated privileges - as root)_
+
 ```
 # 66-tree -n boot  
 # 66-enable -F -t boot boot@system
@@ -82,7 +107,9 @@ The runit services are started the normal way, by symlinking the service directo
 
 Both methods lead to the same basic trees created and services enabled. But before changing the init system, some more configuration must happen.
 
-- Edit the **/etc/66rc.conf** with a text editor, save it and re-enable the `boot@system` service file in the `boot` tree:
+- Edit **/etc/66rc.conf** with a text editor, save it and re-enable the `boot@system` service file in the `boot` tree:
+
+_(commands prefixed by # are given with elevated privileges - as root)_
 
 ```
 # 66-enable -t boot -F boot@system
@@ -92,4 +119,4 @@ Please consult the `boot@` man page and the comments of the configuration file. 
 
 ### 3.4 Switching to 66 from runit
 
-To boot the system with 66 instead of runit after the configuration, you just add `init=/usr/bin/66` to the kernel commandline. To switch back, remove the line.
+To boot the system with 66 instead of runit after the configuration, you just add `init=/usr/bin/66` to the kernel commandline. To switch back, remove it.
