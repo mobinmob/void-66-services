@@ -18,7 +18,7 @@ The package also contains some scripts written in order to make the services wor
 
 `void-66-services` contains service frontend files for Void Linux.
  
- Currently these packages are in a [PR](https://github.com/void-linux/void-packages/pull/25743). In order to install them one can build them from the PR or install them from the unofficial void-66 repo.
+ Currently these packages are in a [PR](https://github.com/void-linux/void-packages/pull/25743). In order to install them one can build them from the PR or install them from the unofficial void-66 repo -only for x86_64.
 
  ### 2.1 Installing packages from the void-66 repo.
  - Add the repo:
@@ -38,7 +38,7 @@ You will be prompted to accept the new key:
 Fingerprint: c7:39:79:a3:2a:cf:f1:65:a6:df:3a:1a:6e:93:36:28
 Do you want to import this public key? [Y/n] 
 ```
-- After accepting it, install the new packages:
+- After accepting it, install the packages:
 ```
 # xbps-install boot-66serv void-66-services
 ```
