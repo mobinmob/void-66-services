@@ -18,7 +18,7 @@ The package also contains some scripts written in order to make the services wor
 
 `void-66-services` contains service frontend files for Void Linux.
  
- Currently these packages are in a [PR](https://github.com/void-linux/void-packages/pull/25743). In order to install them one can build them from the PR or install them from the unofficial void-66 repo -currently only for x86-64.
+ Currently these packages are in a [PR](https://github.com/void-linux/void-packages/pull/25743). In order to install them one can build them from the PR or install them from the unofficial void-66 repo - packages available for i686, x86_64, aarch64, x86_64-musl, aarch64-musl.
 
  ### 2.1 Installing packages from the void-66 repo.
  - Add the repo:
