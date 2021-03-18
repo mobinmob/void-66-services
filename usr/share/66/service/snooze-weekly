@@ -1,0 +1,16 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "snooze-weekly daemon"
+@user = ( root )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = (
+exec 2>&1
+s6-mkdir -p -v /var/cache/snooze
+exec snooze -w 0 -s 7d -t /var/cache/snooze/weekly -- sh -c \
+	"test -d /etc/cron.weekly && run-parts --lsbsysinit /etc/cron.weekly; : > /var/cache/snooze/weekly"
+  )
+
