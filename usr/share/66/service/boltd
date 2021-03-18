@@ -1,0 +1,9 @@
+[main]
+@type = longrun
+@version = 0.0.1
+@description = "(thunder)bolt daemon"
+@user = ( root )
+@extdepends = ( dbus )
+
+[start]
+@execute = ( /usr/libexec/boltd )
