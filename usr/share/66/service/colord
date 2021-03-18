@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "color daemon"
+@user = ( root )
+
+[start]
+@runas = colord
+@execute = ( /usr/libexec/colord )
