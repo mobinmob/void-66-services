@@ -1,0 +1,13 @@
+[main]
+@type = longrun
+@version = 0.0.1
+@description = "ratbag daemon"
+@user = ( root )
+@extdepends = ( dbus )
+
+[start]
+@execute = ( execl-cmdline -s { ratbagd ${cmd_args} } )
+
+[environment]
+cmd_args=!--verbose
+
