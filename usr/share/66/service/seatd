@@ -1,0 +1,14 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "seat daemon"
+@user = ( root )
+
+[start]
+@execute = ( 
+ execl-cmdline -s {
+ export SEATD_LOGLEVEL ${SEATD_LOGLEVEL} 
+ seatd -g _seatd } )
+
+[environment]
+SEATD_LOGLEVEL=error
