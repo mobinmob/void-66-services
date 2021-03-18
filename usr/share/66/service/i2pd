@@ -1,0 +1,14 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "i2p daemon"
+@user = ( root )
+
+[start]
+@runas = _i2pd
+@execute = ( execl-cmdline -s { i2pd --service --conf=${conf} --tunconf=${tunconf} ${cmd_args} } )
+
+[environment]
+conf=!/etc/i2pd/i2pd.conf
+tunconf=!/etc/i2pd/tunels.conf
+cmd_args=!--log=stdout
