@@ -1,0 +1,10 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "monkey HTTP server"
+@user = ( root )
+
+[start]
+@execute = ( monkey )
+
+
