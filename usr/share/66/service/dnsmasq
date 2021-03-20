@@ -1,0 +1,15 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "dnsmasq daemon"
+@user = ( root )
+
+[start]
+@execute = (
+	if { s6-mkdir -p -v /var/lib/misc }
+	execl-cmdline -s { dnsmasq -k -u dnsmasq -g dnsmasq ${cmd_args} } )
+
+[environment]
+cmd_args=!--enable-dbus -8 -
+
+

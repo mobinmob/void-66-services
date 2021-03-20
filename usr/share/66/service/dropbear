@@ -1,12 +1,12 @@
 [main]
 @type = classic
 @description = "dropbear ssh daemon"
-@version = 0.0.1
+@version = 0.0.3
 @user = ( root )
-@options = ( log env )
 
 [start]
 @execute = ( execl-cmdline -s { dropbear -F ${cmd_args} } )
 
 [environment]
-cmd_args=!-R
+# -E is for logging to stderr instead of syslog
+cmd_args=!-R -E -g

@@ -1,10 +1,17 @@
 [main]
 @type = classic
 @description = "dcron daemon"
-@version = 0.0.2
+@version = 0.0.3
 @user = ( root )
 @notify = 3
 
 [start]
 # https://github.com/dubiousjim/dcron/issues/13
-@execute = ( 66-ns -d 3 -o unshare=pid dcrond -f )
+@execute = ( execl-cmdline -s { 66-ns -d 3 -o unshare=pid dcrond -f ${cmd_args} } )
+
+[environment]
+# -d enables the debug output, < -M /usr/bin/true> stops the repeated messages about
+# sendmail not being present. If one wants to use sendmail or any other mta, they can
+# remove < -M /usr/bin/true> or adjust it accordingly.
+cmd_args=!-d -M /usr/bin/true
+

@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "inspircd daemon"
+@user = ( root )
+
+[start]
+@runas = inspircd
+@execute = ( execl-cmdline -s { inspircd --nofork --config=${config} } )
+
+[environment]
+config=!/etc/inspircd/inspircd.conf

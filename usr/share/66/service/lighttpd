@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "lighttp daemon"
+@user = ( root )
+
+[start]
+@execute = ( lighttpd-angel -D -f ${conf_file} )
+
+[environment]
+conf_file=!/etc/lighttpd/lighttpd.conf
+
