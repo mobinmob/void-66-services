@@ -1,7 +1,7 @@
 [main]
 @type = classic
 @description = "dropbear ssh daemon"
-@version = 0.0.2
+@version = 0.0.3
 @user = ( root )
 
 [start]
@@ -9,4 +9,4 @@
 
 [environment]
 # -E is for logging to stderr instead of syslog
-cmd_args=!-R -E
+cmd_args=!-R -E -g
