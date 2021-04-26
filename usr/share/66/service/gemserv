@@ -1,0 +1,15 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "gemini server in rust"
+@user = ( root )
+
+[start]
+@runas = _gemserv
+@execute = ( execl-cmdline -s { gemserv ${CONF} } )
+
+
+[environment]
+# The conf file must exist and be correct.
+CONF=!/etc/gemserv.conf
+
