@@ -1,8 +1,7 @@
 [main]
 @type = longrun
-@version = 0.0.1
+@version = 0.0.2
 @description = "Anonymizing Overlay Network"
-@options = ( log )
 @user = ( root tor )
 
 [start]

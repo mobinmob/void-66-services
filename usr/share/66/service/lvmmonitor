@@ -1,9 +1,8 @@
 [main]
 @type= oneshot
-@version = 0.0.1
+@version = 0.0.2
 @description= "monitoring of lvm2 mirrors, snapshots ..."
 @user= ( root )
-@options= ( log )
 @depends= ( lvm2-lvmetad dm-event )
 
 [start]

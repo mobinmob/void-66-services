@@ -1,9 +1,8 @@
 [main]
 @type = oneshot
-@version = 0.0.1
+@version = 0.0.2
 @description = "Start Uncomplicated firewall"
 @user = ( root )
-@options = ( log )
 
 [start]
 @execute = ( /usr/lib/ufw/ufw-init start )

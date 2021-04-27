@@ -1,9 +1,8 @@
 [main]
 @type = longrun
-@version = 0.0.1
+@version = 0.0.2
 @description = "elogind daemon"
 @user = ( root )
-@options = ( log env )
 @extdepends = ( dbus )
 
 [start]

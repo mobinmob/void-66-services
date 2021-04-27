@@ -1,9 +1,8 @@
 [main]
 @type = classic
 @description = "rsync daemon"
-@version = 0.0.1 
+@version = 0.0.2
 @user = ( root )
-@options = ( log )
 
 [start]
 @build = custom
@@ -11,5 +10,3 @@
 @execute = ( exec 2>&1
  [ ! -e /etc/rsyncd.conf ] && exit 1
 exec rsync --daemon --no-detach )
-
-

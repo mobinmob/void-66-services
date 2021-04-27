@@ -9,5 +9,3 @@
 
 [stop]
 @execute = ( /usr/libexec/drbd stop )
-
-

@@ -1,9 +1,8 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "CTDB cluster daemon"
 @user = ( root )
-@options = ( log )
 
 [start]
 @execute = ( ctdbd -i )
