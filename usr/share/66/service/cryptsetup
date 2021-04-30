@@ -1,0 +1,8 @@
+[main]
+@type = oneshot
+@description = "cryptsetup service"
+@version = 0.0.1
+@user = ( root )
+
+[start]
+@execute = ( sh -c "exec /etc/66/script/cryptsetup.sh" )
