@@ -1,9 +1,8 @@
 [main]
 @type = oneshot
-@version = 0.0.1
+@version = 0.0.2
 @description = "Restore and store sound card state"
 @user = ( root )
-@options = ( log )
 
 [start]
 @execute = ( alsactl restore )

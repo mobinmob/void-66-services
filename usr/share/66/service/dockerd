@@ -1,8 +1,7 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "dockerd service"
-@options = ( log env )
 @user = ( root )
 @maxdeath = 3
 

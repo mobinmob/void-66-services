@@ -1,13 +1,11 @@
 [main]
 @type = classic
 @description = "OpenNTPD"
-@version = 0.0.1
+@version = 0.0.2
 @user = ( root )
-@options = ( log env )
 
 [start]
 @execute = ( execl-cmdline -s { openntpd -d ${cmd_args} } )
 
 [environment]
 cmd_args=!-s
-

@@ -6,4 +6,3 @@
 
 [start]
 @execute = ( asus-kbd-backlight allowusers )
-

@@ -1,9 +1,8 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "kernel log daemon"
 @user = ( root )
-@options = ( log )
 
 [start]
 @execute = ( redirfd -r 0 /proc/kmsg

@@ -1,10 +1,9 @@
 # The service takes the confing file as @I, which becomes the device name.
 [main]
 @type = oneshot
-@version = 0.0.1
+@version = 0.0.2
 @description = "Start Wireguard interface"
 @user = ( root )
-@options = ( log )
 
 [start]
 @execute = ( wg-quick up @I )
