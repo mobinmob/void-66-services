@@ -1,13 +1,11 @@
 [main]
 @type = classic
 @description = "fancontrol daemon"
-@version = 0.0.1 
+@version = 0.0.2 
 @user = ( root )
-@options = ( log )
 
 [start]
 @build = custom
 @shebang = "/bin/sh"
 @execute = ( [ ! -e /etc/fancontrol ] && exit 1
 exec fancontrol /etc/fancontrol 2>&1 )
-

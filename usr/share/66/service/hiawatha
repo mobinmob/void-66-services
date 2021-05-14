@@ -1,12 +1,8 @@
 [main]
-@type = longrun
+@type = classic
 @description = "hiawatha server"
-@version = 0.0.1
+@version = 0.0.2
 @user = ( root )
-@options = ( log )
-
 
 [start]
 @execute = ( hiawatha -d )
-
-

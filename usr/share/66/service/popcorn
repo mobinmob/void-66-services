@@ -1,9 +1,8 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "popcorn daemon"
 @user = ( root )
-@options = ( log env)
 
 [start]
 @runas = _popcorn

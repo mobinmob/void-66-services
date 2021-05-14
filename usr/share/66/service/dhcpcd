@@ -1,13 +1,11 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "dhcpcd daemon"
 @user = ( root )
-@options = ( log )
 
 [start]
 @execute = ( dhcpcd -M -B )
 
 [stop]
 @execute = ( dhcpcd -x )
-

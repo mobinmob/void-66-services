@@ -1,0 +1,11 @@
+[main]
+@type = classic
+@description = "dnscrypt-proxy daemon"
+@version = 0.0.1 
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { dnscrypt-proxy ${cmd_args} } )
+
+[environment]
+cmd_args=!-config /etc/dnscrypt-proxy.toml

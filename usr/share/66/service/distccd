@@ -1,9 +1,8 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "distcc daemon"
 @user = ( root )
-@options = ( log env)
 
 [start]
 @execute = ( execl-cmdline -s { distccd --no-detach --daemon --user nobody ${allow_options} } )

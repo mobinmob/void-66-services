@@ -1,9 +1,8 @@
 [main]
 @type = oneshot
-@version = 0.0.1
+@version = 0.0.2
 @description = "Virtual machine lock manager socket"
 @user = ( root )
-@options = ( log env )
 
 [start]
 @execute = ( execl-toc -X -S ${socket} -m 0600 )
