@@ -1,9 +1,8 @@
 [main]
 @type = longrun
-@version = 0.0.1
+@version = 0.0.2
 @description = "networkmanager daemon"
 @user = ( root )
-@options = ( log env )
 @extdepends = ( dbus )
 
 [start]
@@ -14,4 +13,3 @@
 # -d is for --debug. -d is preferred as it directs log output to 
 # the stdout as well as syslog.
 cmd_args=! -d
-

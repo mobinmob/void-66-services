@@ -1,9 +1,8 @@
 [main]
 @type = classic
 @description = "chrony ntp daemon"
-@version = 0.0.1
+@version = 0.0.2
 @user = ( root )
-@options = ( log env )
 
 [start]
 @execute = ( 

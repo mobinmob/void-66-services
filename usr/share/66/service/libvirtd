@@ -1,10 +1,9 @@
 [main]
 @type = longrun
-@version = 0.0.1
+@version = 0.0.2
 @description = "Virtualization daemon"
 @user = ( root )
 @depends = ( virtlockd virtlogd )
-@options = ( log )
 @extdepends = ( dbus )
 
 [start]

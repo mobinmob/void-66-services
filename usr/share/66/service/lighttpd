@@ -9,4 +9,3 @@
 
 [environment]
 conf_file=!/etc/lighttpd/lighttpd.conf
-

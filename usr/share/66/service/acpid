@@ -1,14 +1,11 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "acpid daemon"
 @user = ( root )
-@options = ( log env )
 
 [start]
 @execute = ( execl-cmdline -s { acpid -f ${cmd_args} }  )
 
-
 [environment]
 cmd_args=!-l
-

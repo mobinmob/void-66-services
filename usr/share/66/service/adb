@@ -1,9 +1,8 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "android debug bridge daemon"
 @user = ( root )
-@options = ( log env )
 
 [start]
 @execute = ( execl-cmdline -s { s6-fghack adb ${cmd_args} } )

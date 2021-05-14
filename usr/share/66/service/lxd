@@ -1,8 +1,7 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "lxd service"
-@options = ( log )
 @user = ( root )
 @maxdeath = 3
 

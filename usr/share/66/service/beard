@@ -1,0 +1,17 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "simple hibernation daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { beard -H ${BEARD_HIBERNATE} ${cmd_args} }  )
+
+
+[environment]
+# BEARD_HIBERNATE is the default command for hibernation,
+# -v is for verbose output, used both as a placeholder and for 
+# providing more logging information.
+BEARD_HIBERNATE=!/usr/bin/zzz
+cmd_args=!-v
+
