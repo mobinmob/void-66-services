@@ -1,12 +1,12 @@
 # The service takes the network interface device name as @I - e.g. dhcpcd@wlp0s18f2u5
 [main]
 @type = classic
-@version = 0.0.3
+@version = 0.0.1
 @description = "dhcpcd daemon for @I"
 @user = ( root )
 
 [start]
-@execute = ( execl-cmdline -s { dhcpcd -B @I ${cmd_args} } )
+@execute = ( execl-cmdline -s { 66-ns -o unshare=pid dhcpcd -B @I ${cmd_args} } )
 
 [environment]
 # -j sends log to a logfile for the per-service logger. For more options/switches
