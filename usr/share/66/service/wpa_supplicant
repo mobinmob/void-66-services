@@ -1,9 +1,8 @@
 [main]
 @type = classic
 @description = "WPA/WPA2/IEEE 802.1X Supplicant daemon"
-@version = 0.0.1
+@version = 0.0.2
 @user = ( root )
-@options = ( log env )
 @hiercopy = ( wpa_supplicant-auto )
 
 [start]

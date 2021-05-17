@@ -1,10 +1,9 @@
 [main]
 @type = longrun
-@version = 0.0.1
+@version = 0.0.2
 @description = "cups-browsed daemon"
 @user = ( root )
 @depends = ( cupsd )
-@options = ( log )
 
 [start]
 @execute = ( cups-browsed -v )
