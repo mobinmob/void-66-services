@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "MPD audio scrobbler"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { mpdscribble --no-daemon ${cmd_args} })
+
+[environment]
+# --log - sends logs to stderr, --log syslog sends to syslog.
+# Please see mpdscribble(8) for more options.
+cmd_args=!--log -
