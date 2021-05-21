@@ -8,7 +8,9 @@ Changes
 - More work to have services log to the per-service logger instead of syslog.
 - Add a changelog.
 - Split licensing information  (LICENSE - LICENSE-3RD-PARTY) and amend the README.md accordingly.
-
+- Repo-wide: remove unneeded @options key, standardise layout a little.
+- Create additional service frontend files for nginx, dhcpcd and dhcpcd@ that use pid namespaces though 66-ns.
+These frontends have the suffix _ns after the service name.
 
 [0.0.2](https://github.com/mobinmob/void-66-services/releases/tag/v0.0.2) || 2021-02-15
 =
