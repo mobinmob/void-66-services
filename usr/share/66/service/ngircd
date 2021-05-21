@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "new generation irc daemon"
+@user = ( root )
+
+[start]
+@execute = ( ngircd -n )
+
