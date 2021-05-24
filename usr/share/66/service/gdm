@@ -1,0 +1,16 @@
+[main]
+@type = longrun
+@version = 0.0.1
+@description = "gdm daemon"
+@user = ( root )
+@extdepends = ( dbus )
+
+[start]
+@execute = (
+  if {
+  	execl-toc -d /run/gdm -m 0711
+	chown root:gdm /run/gdm
+  }
+  gdm
+)
+
