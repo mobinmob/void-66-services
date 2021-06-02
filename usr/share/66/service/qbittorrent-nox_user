@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@version = @VERSION@
+@description = "qbittorent-nox daemon"
+@user = ( user )
+@options = ( log )
+
+[start]
+@execute = ( qbittorrent-nox )
