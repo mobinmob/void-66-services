@@ -1,0 +1,14 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "proxy ARP ip bridging daemon"
+@user = ( root )
+
+
+[start]
+@execute = ( execl-cmdline -s { parprouted ${cmd_args} } )
+
+[environment]
+# -d is necessary so that the daemon can run on the foreground.
+# Other switches are needed for the daemon to be usefull.
+cmd_args=!-d
