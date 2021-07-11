@@ -1,0 +1,11 @@
+[main]
+@type = longrun
+@version = 0.0.1
+@notify = 3
+@description = "login/logout user tracking daemon"
+@user = ( root )
+
+[start]
+@execute = (
+	utlogd -d 3
+)
