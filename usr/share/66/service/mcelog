@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "decode kernel machine check log"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { mcelog --daemon --foreground ${cmd_args} } )
+
+[environment]
+# To log on syslog replace the the --logfile with --syslog = yes. The voidlinux
+# service script uses the later. Please consult mcelog(8) for more options.
+cmd_args=!--logfile = /dev/stderr 
