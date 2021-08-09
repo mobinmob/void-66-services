@@ -7,11 +7,7 @@
 
 [start]
 @execute = (
-  if {
-	execl-toc -d /run/gdm -m 0711
-	chown root:gdm /run/gdm
-  }
-  if  {	s6-sleep 1 s6-echo Starting gdm... } 
+  execl-toc -d /run/gdm -m 0711 -u root -g gdm
+   if  { s6-sleep 1 s6-echo Starting gdm... } 
    gdm
 )
-
