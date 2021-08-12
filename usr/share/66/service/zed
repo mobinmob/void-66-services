@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "zfs event daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { zed -F ${cmd_args} }  )
+
+
+[environment]
+cmd_args=!-v
+
