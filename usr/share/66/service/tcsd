@@ -1,0 +1,10 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "trusted computing resources daemon"
+@user = ( root )
+
+[start]
+@runas =  tss:tss 
+@execute = ( tcsd -f )
+
