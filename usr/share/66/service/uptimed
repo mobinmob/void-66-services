@@ -1,0 +1,8 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "uptime daemon"
+@user = ( root )
+
+[start]
+@execute = ( uptimed -f )
