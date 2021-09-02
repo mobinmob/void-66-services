@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "shiori bookmark manager"
+@user = ( root )
+
+[start]
+@runas = _shiori
+@execute = ( execl-cmdline -s { shiori serve ${cmd_args} } )
+
+
+[environment]
+cmd_args=!--address 127.0.0.1 --port 8080
