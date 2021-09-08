@@ -1,0 +1,14 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "postfix mta daemon"
+@user = ( root )
+
+[start]
+@execute = (
+	if { postfix check }
+	/usr/libexec/postfix/master -d  )
+
+# In order to use the per-service logger, please follow the
+# documentation in for logging to stdout:
+# http://www.postfix.org/MAILLOG_README.html#log-to-stdout
