@@ -1,0 +1,10 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "mysqldb daemon"
+@user = ( root )
+
+[start]
+@execute = (   
+	execl-toc -d /run/mysqld -u mysql -g mysql   
+	s6-setuidgid mysql mysqld --user=mysql )
