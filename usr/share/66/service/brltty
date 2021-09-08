@@ -1,0 +1,16 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "braille display driver daemon"
+@user = ( root )
+
+[start]
+@execute = ( 
+	execl-toc -d /var/run/brltty
+	execl-cmdline -s { brltty -n ${cmd_args} }  )
+
+
+[environment]
+# -e is for logging on stderr in order to use the per-service logger.
+# for more switches/options, please consult the brltty(8) manual.
+cmd_args=!-e
