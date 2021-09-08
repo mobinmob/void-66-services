@@ -1,0 +1,17 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "caddy HTTP daemon"
+@user = ( root )
+
+[start]
+@execute = (
+	s6-softlimit -o ${MAX_OPEN_FILES} 
+	s6-setuidgid caddy
+	caddy run --config ${CONFFILE}
+)
+
+[environment]
+HOME=/var/lib/caddy
+MAX_OPEN_FILES=!8192
+CONFFILE=!/etc/caddy/Caddyfile
