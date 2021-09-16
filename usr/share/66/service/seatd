@@ -5,9 +5,7 @@
 @user = ( root )
 
 [start]
-@execute = ( 
- export SEATD_LOGLEVEL ${SEATD_LOGLEVEL} 
- seatd -g _seatd )
+@execute = ( seatd -g _seatd )
 
 [environment]
 SEATD_LOGLEVEL=error
