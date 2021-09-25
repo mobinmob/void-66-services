@@ -1,0 +1,19 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "cg rules engine daemon"
+@user = ( root )
+
+[start]
+@execute = (
+	execl-toc -d /etc/cgconfig.d
+	if { execl-cmdline -s { cgconfigparser ${PARSEOPTS} } }
+	execl-cmdline -s cgrulesengd { ${cmd_args} }
+
+)
+
+[environment]
+PARSEOPTS=!-l /etc/cgconfig.conf
+# '-n' is to prevent the service detaching, '-f -' is to send the logs to stdout for the
+# per-service logger. For more please consult the cgrulesengd(8) manual.
+cmd_args=!-nf - -g cgred
