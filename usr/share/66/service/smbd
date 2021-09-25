@@ -5,5 +5,6 @@
 @user = ( root )
 
 [start]
-@execute = ( foreground { s6-mkdir -p /run/samba }
+@execute = (
+	execl-toc -d /run/samba
 	exec smbd -F -S --no-process-group )

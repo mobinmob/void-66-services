@@ -8,9 +8,9 @@
 @build = custom
 @shebang = "/bin/sh"
 @execute = (
-exec 2>&1
-s6-mkdir -p -v /var/cache/snooze
-exec snooze -d 1 -s 28d -t /var/cache/snooze/monthly -- sh -c \
+	exec 2>&1
+	execl-toc -d /var/cache/snooze
+	exec snooze -d 1 -s 28d -t /var/cache/snooze/monthly -- sh -c \
 	"test -d /etc/cron.monthly && run-parts --lsbsysinit /etc/cron.monthly; : > /var/cache/snooze/monthly"
   )
 
