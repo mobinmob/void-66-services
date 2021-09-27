@@ -1,0 +1,11 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "earlyoom daemon"
+@user = (root)
+
+[start]
+@execute = ( execl-cmdline -s { earlyoom ${command_args} }
+
+[environment]
+command_args=$EARLYOOM_ARGS
