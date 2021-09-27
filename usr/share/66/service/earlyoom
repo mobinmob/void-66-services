@@ -1,0 +1,14 @@
+linuxer, [27.09.21 16:11]
+[main]
+@type = classic
+@version = 0.0.1
+@description = "earlyoom daemon service"
+@user = (root)
+
+[start]
+@execute = ( execl-cmdline -s { earlyoom ${cmd_args} } )
+
+[environment]
+# Using environmental variables here instead of the default config file (/etc/default/earlyoom)
+# Please consult the manual for more switches
+cmd_args=!-d -r 3600 -n --avoid '(^|/)(s6-svscan|Xorg|sshd)$'
