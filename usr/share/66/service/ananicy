@@ -1,0 +1,11 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "ananicy daemon service"
+@user = (root)
+
+[start]
+@execute = ( if { sysctl -e kernel.sched_autogroup_enabled=0 }
+             ananicy start )
+[stop]
+@execute = ( sysctl -e kernel.sched_autogroup_enabled=1 )
