@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "irqbalance daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { irqbalance -f ${cmd_args} } )
+
+[environment]
+# The value is a placeholder and it is the default.
+# for more switches please consult the irqbalance(1) manual.
+cmd_args=!--deepestcache=2
