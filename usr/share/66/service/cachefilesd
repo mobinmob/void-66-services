@@ -1,0 +1,17 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "cachefiles daemon"
+@user = ( root )
+
+[start]
+@execute = ( 
+	# -qab is used in the upstream service
+	if { modprobe -qab cachefiles }
+	execl-cmdline -s { cachefilesd -n ${cmd_args} } )
+)
+	
+[environment]
+# -s is used in order to redirect logging output to stderr for the per-service logger.
+# for more switches, see the cachefilesd(8) manual. 
+cmd_args=!-s -f /etc/cachefilesd.conf
