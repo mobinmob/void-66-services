@@ -1,0 +1,46 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "PostgreSQL daemon"
+@user = ( root )
+
+[start]
+@build = custom
+@shebang = "/bin/sh"
+@execute = (
+
+exec 2>&1
+
+envfile /etc/default/postgresql
+importas PGDATA PGROOT
+export PGDATA ${PGDATA}/run
+
+if [ "$PGROOT" != "/var/lib/postgresql" ]; then
+
+	66-yeller "Creating symlink /var/lib/postgresql -> $PGROOT"
+
+	# Remove /var/lib/postgres if empty dir, but not if symlink
+	if [ ! -L /var/lib/postgres ] && [ -d /var/lib/postgres ]; then
+		rmdir /var/lib/postgres
+	fi
+
+        ln -sf "$PGROOT" /var/lib/postgresql
+
+fi
+
+
+if [ ! -d "$PGDATA" ]; then
+
+	66-yeller "Initializing database in $PGDATA"
+
+        execl-toc -X -d "$PGDATA" -u postgres -g postgres -m 0700
+	su - postgres -m -c "/usr/bin/initdb $INITOPTS -D '$PGDATA'" >/dev/null
+
+        execl-toc -f /etc/postgresql/postgresql.conf \
+                  ln -sf /etc/postgresql/postgresql.conf "$PGDATA/postgresql.conf"
+
+fi
+
+exec s6-setuidgid postgres:postgres postgres -D "$PGDATA" $PGOPTS 2>&1
+
+)
