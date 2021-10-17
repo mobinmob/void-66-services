@@ -1,0 +1,15 @@
+[main]
+@type = longrun
+@description = "conman-vpn daemon"
+@version = 0.0.1 
+@user = ( root )
+@extdepends = ( dbus )
+
+
+[start]
+@execute = ( execl-cmdline -s { connman-vpnd -n ${cmd_args} } )
+
+[environment]
+cmd_args=!-d
+
+
