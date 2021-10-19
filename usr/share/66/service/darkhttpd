@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "darkhttp daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { darkhttpd "${WWWDIR}" --chroot --uid _darkhttpd --gid _darkhttpd ${cmd_args} } )
+
+[environment]
+WWWDIR=!/srv/www/darkhttpd
+# --timeout 30 is the default, here as a placeholder.
+cmd_args=!--timeout 30
