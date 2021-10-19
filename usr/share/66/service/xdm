@@ -1,0 +1,11 @@
+[main]
+@type = longrun
+@description = "xdm daemon"
+@version = 0.0.2
+@user = ( root )
+@depends = ( logind )
+@extdepends = ( dbus ) # if the user does not need dbus running, this line can be commented out or ommited
+@timeout-up = 3000
+
+[start]
+@execute = ( xdm -error /dev/stdout -nodaemon )
