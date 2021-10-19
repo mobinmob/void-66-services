@@ -10,7 +10,7 @@ Changes
 - Split licensing information  (LICENSE - LICENSE-3RD-PARTY) and amend the README.md accordingly.
 
 
-[0.0.2](https://github.com/mobinmob/void-66-services/releases/tag/v0.0.2) || 2021-12-15
+[0.0.2](https://github.com/mobinmob/void-66-services/releases/tag/v0.0.2) || 2021-02-15
 =
 -   95 services in total!
 - Packaging templates  are created for the master and devel branches under _packaging/_ and the Makefile is removed. The new templates should used by anyone that wants to install the contents of the branches to test new services or contribute to the repo.
