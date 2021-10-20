@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "touchegg multitouch gesture recognizer daemon"
+@user = ( root )
+
+[start]
+@runas = _touchegg:input
+@execute = ( touchegg --daemon )
