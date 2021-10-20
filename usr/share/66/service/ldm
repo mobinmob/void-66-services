@@ -1,0 +1,11 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "lightweight device mounter daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { ldm ${cmd_args} } )
+
+[environment]
+cmd_args=!-u nobody
