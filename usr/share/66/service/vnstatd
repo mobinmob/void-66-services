@@ -1,0 +1,8 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "network traffic monitor daemon"
+@user = ( root )
+
+[start]
+@execute = ( vnstatd -n )
