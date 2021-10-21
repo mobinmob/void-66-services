@@ -1,15 +1,17 @@
 [main]
 @type = classic
-@version = 0.0.2
+@version = 0.0.3
 @description = "gitea daemon"
 @user = ( root )
 
 [start]
-@runas = _gitea
+@runas = _gitea:_gitea
 @execute = ( 
-  execl-cmdline -s {
-  export USER _gitea 
-  export HOME /var/lib/gitea 
-  export GITEA_WORK_DIR $HOME 
-  gitea web --config /etc/gitea.conf }
-)
+	cd /var/lib/gitea
+	execl-cmdline -s { gitea web --config ${config_file} } )
+
+[environment]
+USER=_gitea
+HOME=/var/lib/gitea
+GITEA_WORK_DIR=var/lib/gitea
+config_file=!/etc/gitea.conf
