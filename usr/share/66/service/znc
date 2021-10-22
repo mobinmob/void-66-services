@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "znc irc bouncer daemon"
+@user = ( root )
+
+[start]
+@runas = znc:znc
+@execute = ( execl-cmdline -s { znc -f ${cmd_args} } )
+
+[environment]
+cmd_args=!-n
+
