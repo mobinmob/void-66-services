@@ -1,0 +1,14 @@
+[main]
+@type = oneshot
+@version = 0.0.1
+@description = "start upsdrv control"
+@user = ( root )
+
+[start]
+@execute = ( 
+	execl-toc -d /run/ups -m 770 -u nut -g nut
+	upsdrvctl start
+ )
+
+[stop]
+@execute = ( upsdrvctl pause )
