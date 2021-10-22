@@ -1,0 +1,8 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "gnunet daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { /usr/lib/gnunet/libexec/gnunet-service-arm -c /etc/gnunet/gnunet.conf } )
