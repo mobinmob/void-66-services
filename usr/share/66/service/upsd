@@ -1,0 +1,11 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "ups information daemon"
+@user = ( root )
+
+[start]
+@execute = ( 
+	execl-toc -d /run/ups -m 0770 -u nut -g nut
+	upsd -D 
+)
