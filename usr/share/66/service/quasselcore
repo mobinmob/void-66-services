@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "quasselcore daemon"
+@user = ( root )
+
+[start]
+@runas = quassel
+@execute = ( execl-cmdline -s { quasselcore ${cmd_args} } )
+
+[environment]
+# logfile directs the logs to stdout for the per-service logger.
+cmd_args=!--require-ssl --configdir=/var/lib/quassel --logfile=/dev/stdout
