@@ -1,0 +1,8 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "system performace statistics collection daemon"
+@user = ( root )
+
+[start]
+@execute = ( collectd -f )
