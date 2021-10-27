@@ -1,9 +1,8 @@
 [main]
 @type = classic
-@version = @VERSION@
+@version = 0.0.1
 @description = "syncthing daemon"
 @user = ( user )
-@options = ( log env )
 
 [start]
 @execute = ( execl-cmdline -s { syncthing ${cmd_args} } )

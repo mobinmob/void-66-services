@@ -1,9 +1,8 @@
 [main]
 @type = classic
-@version = @VERSION@
+@version = 0.0.1
 @description = "transmission daemon"
 @user = ( user )
-@options = ( log )
 
 [start]
 @execute = ( transmission-daemon -f )
