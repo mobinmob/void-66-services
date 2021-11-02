@@ -1,0 +1,11 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "lsync daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { lsyncd --nodaemon ${conf_file} } )
+
+[environment]
+conf_file=/etc/lsyncd/lsyncd.conf.lua
