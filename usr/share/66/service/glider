@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "glider proxy daemon"
+@user = ( root )
+
+[start]
+@runas = nobody
+@execute = ( execl-cmdline -s { glider -config ${conf_file} })
+
+[environment]
+conf_file=!/etc/glider/config
