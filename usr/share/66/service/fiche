@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "cli pastebin server"
+@user = ( root )
+
+[start]
+@runas = _fiche:_fiche
+@execute = ( execl-cmdline -s { fiche ${cmd_args} } )
+
+[environment]
+cmd_args=!-d yourdomain.com -o /var/tmp/fiche
