@@ -62,7 +62,25 @@ _(commands prefixed by `#` must be run with elevated privileges, as root)_
 
 The script creates the necessary trees, enables in them some services and created the target for the basic configuration file symlink.
 
+After running the `66boot-initial-setup` , you can run two other scripts:
+
+- `66boot-storage-autoconf` which discovers *LVM*, *dmraid*, *LUKS*, *zfs* and *btrfs* volumes
+for the current hw and configures the boot proccess automatically and
+
+- `66boot-rcdotconf` that configures *boot@system* using the configuration of the standard voidlinux /etc/rc.conf.
+
+After each of them or all of them you should finalise the configuration by running:
+
+_(commands prefixed by `#` must be run with elevated privileges, as root)_
+
+```
+# 66-enable -t boot -F boot@system
+```
+
+
 ### 3.2 Manual configuration
+
+***Please do not try doing a manual configuration right after doing automatic configuration!***
 
 #### 3.2.1 The `boot` tree
 
