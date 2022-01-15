@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "privoxy daemon"
+@user = ( root )
+
+[start]
+@runas = privoxy:privoxy
+@execute = ( execl-cmdline -s { privoxy --no-daemon ${conf_file} } )
+
+[environment]
+conf_file=!/etc/privoxy/config
