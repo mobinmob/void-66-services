@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "cntlm daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { cntlm -f ${cmd_args} } )
+
+[environment]
+# Needs a proper /etc/cntlm.conf file.
+# -v is needed to provide more information on the logs.
+cmd_args=! -v
