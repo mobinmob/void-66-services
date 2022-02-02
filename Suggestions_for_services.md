@@ -29,5 +29,4 @@ is incremented in the following releases only if there a change.
 9. When using execline syntax in @execute, @build=auto may be ommited.
 10. Try to keep frontend service files compact, simple and easy to understand.
 A user can always customise them and put the customised version in /etc/66/service.
-11. Development happens in a development branch. We create PRs against it.The
-current development branch is _devel_.
+11. Development happens in the _master_ branch. We create PRs against it, releases are tagged from it.
