@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "router advertisement daemon"
+@user = ( root )
+
+[start]
+# --logmethod=stderr sends logs to per-service logger.
+@execute = ( radvd --nodaemon --logmethod=stderr )
