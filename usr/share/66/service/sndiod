@@ -1,7 +1,7 @@
 [main]
 @type = classic
 @description = "sndio daemon"
-@version = 0.0.2
+@version = 0.0.3
 @user = ( root )
 
 [start]
@@ -10,4 +10,5 @@
 [environment]
 # Value is the default as a placeholder - parser cannot use empty values.
 # For more options/switches please see sndiod(8).
-cmd_args=!-a off
+# -d enables debugging output on standard error for the per-service logger.
+cmd_args=!-a off -d
