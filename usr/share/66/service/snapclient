@@ -1,0 +1,11 @@
+[main]
+@type = longrun
+@version = 0.0.1
+@description = "server daemon for snapclient"
+@user = ( root )
+@depends = ( avahi-daemon )
+
+[start]
+@runas = _snapclient:audio
+@execute = ( snapclient )
+
