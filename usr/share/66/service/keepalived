@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "keepalive daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { keepalived -n ${cmd_args} } )
+
+[environment]
+# -l is for logging to console - using the per-service logger
+cmd_args=!-l
