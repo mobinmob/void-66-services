@@ -1,0 +1,10 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "fail2ban daemon"
+@user = ( root )
+
+[start]
+@execute = ( 
+	execl-toc -d /var/run/fail2ban
+	fail2ban-server -f )
