@@ -1,0 +1,8 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "ckb-next daemon"
+@user = ( root )
+
+[start]
+@execute = ( ckb-next-daemon )
