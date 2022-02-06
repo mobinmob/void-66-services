@@ -28,8 +28,8 @@ in the void-packages repo contains a template for the lastest released void-66-p
 version. Creating a package from that template and installing it is the
 preferred method to get the frontend service files.
 
-Additionally, there are templates that create packages from the master or devel
-branches of this repo under *packaging/* for anyone who wishes to track development or participate
+Additionally, there is a template that creates packages from the master
+branch of this repo under *packaging/* for anyone who wishes to track development or participate
 in it.
 
 When using these packages, frontend service files will be placed in under */usr/share/66/service/*.
