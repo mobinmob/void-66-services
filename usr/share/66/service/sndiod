@@ -1,13 +1,14 @@
 [main]
 @type = classic
 @description = "sndio daemon"
-@version = 0.0.1 
+@version = 0.0.3
 @user = ( root )
-@options = ( log env )
 
 [start]
 @execute = ( execl-cmdline -s { sndiod ${cmd_args} -d } )
 
 [environment]
 # Value is the default as a placeholder - parser cannot use empty values.
-cmd_args=!-a off
+# For more options/switches please see sndiod(8).
+# -d enables debugging output on standard error for the per-service logger.
+cmd_args=!-a off -d

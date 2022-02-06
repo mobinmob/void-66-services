@@ -1,10 +1,10 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "smb daemon"
 @user = ( root )
-@options = ( log )
 
 [start]
-@execute = ( foreground { s6-mkdir -p /run/samba }
+@execute = (
+	execl-toc -d /run/samba
 	exec smbd -F -S --no-process-group )

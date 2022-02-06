@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "monero daemon"
+@user = ( root )
+
+[start]
+@runas = monero
+@execute = ( monerod --non-interactive --config-file ${conf_file} )
+
+[environment]
+conf_file=!/etc/monerod.conf

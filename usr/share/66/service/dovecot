@@ -1,0 +1,11 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "dovecot IMAP and POP3  daemon"
+@user = ( root )
+
+[start]
+@execute = ( 
+	execl-toc -d /var/run/dovecot -m 0755 -u root -g root
+	dovecot -F  )
+

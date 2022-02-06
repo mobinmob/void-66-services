@@ -1,0 +1,11 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "BIRD internet routing daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { bird -f -u _bird -g _bird ${cmd_args} } )
+
+[environment]
+cmd_args=!-c /etc/bird.conf

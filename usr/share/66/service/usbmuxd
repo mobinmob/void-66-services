@@ -1,0 +1,11 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "USB multiplex daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { usbmuxd -f ${cmd_args} } )
+
+[environment]
+cmd_args=!-u

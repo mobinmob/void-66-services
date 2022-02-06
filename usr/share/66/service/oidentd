@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "oident daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { oidentd -i ${cmd_args} } )
+
+[environment]
+# -S is for logging to stdout to use the per-service logger
+cmd_args=! -u nobody -g nogroup -S

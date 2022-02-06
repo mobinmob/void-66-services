@@ -3,8 +3,7 @@
 @description = "WPA/WPA2/IEEE 802.1X Supplicant daemon"
 @version = 0.0.1
 @user = ( root )
-@options = ( log env )
-@hiercopy = ( wpa_supplicant-auto )
+@hiercopy = ( data )
 
 [start]
 @build = custom
@@ -14,7 +13,7 @@ exec 2>&1
 if [ -n "$CONF_FILE" ]; then
 	${OPTS:=-M -c ${CONF_FILE:-/etc/wpa_supplicant/wpa_supplicant.conf} ${WPA_INTERFACE:+-i ${WPA_INTERFACE}} ${DRIVER:+-D ${DRIVER}} -s}
 else
-	. ./wpa_supplicant-auto
+	. ./data/wpa_supplicant-auto
 	OPTS="${AUTO} -s"
 fi
 

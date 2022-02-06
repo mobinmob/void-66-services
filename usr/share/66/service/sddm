@@ -1,9 +1,8 @@
 [main]
 @type = longrun
-@version = 0.0.1
+@version = 0.0.2
 @description = "sddm daemon"
 @user = ( root )
-@options = ( log )
 @extdepends = ( dbus )
 @timeout-up = 3000
 

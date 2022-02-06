@@ -1,9 +1,13 @@
 [main]
-@type = longrun
-@version = 0.0.1
+@type = classic
+@version = 0.0.3
 @description = "Anonymizing Overlay Network"
-@options = ( log )
 @user = ( root tor )
 
 [start]
-@execute = ( tor --runasdaemon 0 )
+@execute = ( 
+	s6-softlimit -o ${MAX_OPEN_FILES}
+	tor --runasdaemon 0 )
+
+[environment]
+MAX_OPEN_FILES=16384

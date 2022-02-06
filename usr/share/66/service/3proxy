@@ -1,0 +1,11 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "3proxy tiny proxy daemon"
+@user = ( root )
+
+[start]
+@execute = ( 3proxy ${config_file} )
+
+[environment]
+config_file=!etc/3proxy/3proxy.cfg

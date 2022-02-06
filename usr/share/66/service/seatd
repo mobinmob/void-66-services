@@ -1,14 +1,12 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "seat daemon"
 @user = ( root )
 
 [start]
-@execute = ( 
- execl-cmdline -s {
- export SEATD_LOGLEVEL ${SEATD_LOGLEVEL} 
- seatd -g _seatd } )
+@execute = ( execl-cmdline -s { seatd ${cmd_args} } )
 
 [environment]
 SEATD_LOGLEVEL=error
+cmd_args=!-g _seatd

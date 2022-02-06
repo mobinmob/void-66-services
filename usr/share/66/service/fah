@@ -1,9 +1,8 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "folding@home daemon"
 @user = ( root )
-@options = ( log )
 
 [start]
 @runas = _fah
@@ -11,4 +10,3 @@
   execl-toc -d /usr/libexec/_fah -m 0755 -u _fah -g _fah
   /usr/bin/FAHClient --chdir /usr/libexec/_fah
 )
-

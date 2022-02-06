@@ -5,14 +5,7 @@
 @user = ( root )
 
 [start]
-@execute = (
-execl-cmdline -s {
-  export ZRAM_COMP_ALGORITHM ${ZRAM_COMP_ALGORITHM} 
-  export ZRAM_PRIORITY ${ZRAM_PRIORITY}
-  export ZRAM_SIZE ${ZRAM_SIZE}
-  export ZRAM_STREAMS ${ZRAM_STREAMS}
-  zramen make } 
- )
+@execute = ( zramen make )
 
 [stop]
 @execute = ( zramen toss )

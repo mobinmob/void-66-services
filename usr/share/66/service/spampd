@@ -1,0 +1,11 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "spamd daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { spampd --nodetach ${cmd_args} } )
+
+[environment]
+cmd_args=!--host=127.0.0.1:10025 --relayhost=127.0.0.1:10026 --a --rh --u=_spampd --g=_spampd --maxsize=512

@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "dhcpcd daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { 66-ns -o unshare=pid dhcpcd ${cmd_args} } )
+
+[environment]
+# -j sends the logs to a logfile for the per-service logger. Please consult
+# dhcpcd(8) for more options/switches.
+cmd_args=!-M -j /dev/stderr

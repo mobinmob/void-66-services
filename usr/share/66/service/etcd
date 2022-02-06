@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "etcd daemon"
+@user = ( root )
+
+[start]
+@runas = etcd:etcd
+@execute = ( etcd )
+
+[environment]
+ETCD_DATA_DIR=/var/lib/etcd
+ETCD_NAME=etcd

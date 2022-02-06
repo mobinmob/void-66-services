@@ -1,12 +1,11 @@
 [main]
 @type = classic
 @description = "dhclient daemon"
-@version = 0.0.1 
+@version = 0.0.3 
 @user = ( root )
-@options = ( log )
-
 
 [start]
-@execute = ( dhclient -d -w )
+@execute = ( execl-cmdline -s { dhclient -d ${cmd_args} } )
 
-
+[environment]
+cmd_args=!-w

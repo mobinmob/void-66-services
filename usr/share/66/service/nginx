@@ -1,12 +1,14 @@
 [main]
-@type = longrun
-@version = 0.0.1
+@type = classic
+@version = 0.0.2
 @description = "nginx HTTP daemon"
 @user = ( root )
-@options = ( log )
 
 [start]
 @execute = (
-	 execl-toc -d /run/nginx -m 0710 -g nginx -u root
-	 nginx -g "daemon off;"
+	execl-toc -d /run/nginx -m 0710 -g nginx -u root
+	execl-cmdline -s { nginx ${cmd_args} }
 )
+
+[environment]
+cmd_args=!-g "daemon off;error_log stderr info;"
