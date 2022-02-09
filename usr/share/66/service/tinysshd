@@ -1,0 +1,15 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "tinyssh daemon"
+@user = ( root )
+
+[start]
+@execute = (
+	foreground { tinysshd-makekey -q /etc/tinyssh/sshkeydir }
+	execl-cmdline -s { s6-tcpserver -v ${ADDRESS} ${SSHPORT}  tinysshd ${cmd_args} /etc/tinyssh/sshkeydir }  )
+
+[environment]
+cmd_args=! -L -v
+ADDRESS=0.0.0.0
+SSHPORT=!22
