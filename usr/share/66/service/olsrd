@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "Optimised Link State Routing daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { olsrd -nofork ${cmd_args} } )
+
+
+[environment] 
+cmd_args=!-f /etc/olsrd.conf
