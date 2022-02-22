@@ -2,8 +2,8 @@
 
 ## Basic concept
 
-s6 uses the logging concept pioneered by daemontools. That means that for every service there can be a log service that will save to a file everything that the service sends to its stdout. With stderr typically being redirected to stdout, that means that everything the service sends there also gets logged.
-s6 setup typically use s6-log for the log service. The basic consept result to a simple and robust system, that does not have the single-point-of-failure issue associated with typical syslog.
+s6 implements the logging concept pioneered by daemontools. That means that for every service there can be a log service that will save to a file everything that the service sends to its stdout. With stderr typically being redirected to stdout, that means that everything the service sends there also gets logged.
+s6 setups typically use s6-log for the log service. The basic concept results to a simple and robust system, that does not have the single-point-of-failure issue associated with typical syslog.
 
 ## 66
 
@@ -68,14 +68,14 @@ Log file              :
 
 ```
 
-In the output above, 66 inform the user about the logging directory:
+In the output above, 66 informs the user about the logging directory:
 
 ```
 Log destination       : /var/log/66/gitea
 ```
-In this directory on can fing a file name current, that holds the current log, and - sometines- other files, that hold older logs, as s6-log is configures to auto-rotate the log file.
+In this directory one can find a file name current, that holds the current log, and - sometines- other files, that contain older logs, as s6-log is configured to auto-rotate the log file.
 
-The log directory in void linux is always /var/log/66/servicename.
+The log directory in void linux is always /var/log/66/*<servicename>*.
 Most service frontends that have log information are configured to use this native log solution.
 
 ## Disabling the log service.
@@ -89,7 +89,7 @@ That is configured in the *@options* key in the *[main]* section of the service 
 
 ## Using syslog in addition to the per-service logger
 
-There are scenarions in which having a central logging mechanism in desired. To do that without losing the per-service log - and the nice, complete output of 66-service-,  all that is needed is a syslog daemon that can take input from log files and proper configuration for said daemon.
+There are cases in which having a central logging mechanism is desired. To do that without losing the per-service log and the nice, complete output of 66-service,  all that is needed is a syslog daemon that can take input from log files and proper configuration for said daemon.
 
 *rsyslog* has this ability with the [imfile module](https://rsyslog.readthedocs.io/en/latest/configuration/modules/imfile.html).
 
@@ -104,4 +104,15 @@ input(type="imfile"
 
 ```
 After we start the rsyslogd service, the log messages from gitea will appear in the rsyslogd managed log files in addition to the 66-inservice output.
-This is of course a very barebones rsyslogs configuration example, please consult the rsyslog documentation for more.
+This is of course a very barebones rsyslogd configuration example, please consult the rsyslog documentation for more.
+
+### Double timestamp
+
+Using the method described above, each line logged by rsyslogd has two timestamps. The first from the left is the timestamp added by rsyslog and the second is the timestamp from the s6-log.
+
+If someone wants only one timestamp from the logger, that can be accomplished by configuring s6-log to not add the original timestamp to the log message. One can accomplish that in a *[logger]* frontend section with the *@timestamp* key:
+
+```
+[logger]
+@timestamp = none
+```
