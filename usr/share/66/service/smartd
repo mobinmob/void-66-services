@@ -11,4 +11,4 @@
 # -d does not fork and sends logs to stdout,
 # -n does not fork but logs to syslog
 # for more information, please see the smart(8) man page.
-cmd_args=! -d
+cmd_args=!-d

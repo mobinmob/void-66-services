@@ -12,4 +12,4 @@
 # Necessary switches are either -d or -n. -n is for --no-daemon,
 # -d is for --debug. -d is preferred as it directs log output to 
 # the stdout as well as syslog.
-cmd_args=! -d
+cmd_args=!-d
