@@ -11,7 +11,12 @@ Changes
 - Repo-wide: remove unneeded @options key, standardise layout a little.
 - Create additional service frontend files for nginx, dhcpcd and dhcpcd@ that use pid namespaces though 66-ns.
 These frontends have the suffix _ns after the service name.
-- All services now are represented now by either a single frontend file or a single directory with necessary files/subdirs.
+- All services are represented now by either a single frontend file or a single directory with necessary files/subdirs.
+- Documentation:
+    - Add simple logging documentation in conf/void-66-logging.md.
+    - Add information about the new 66boot-* utilities in conf/void-66-conf.md
+    - Change Suggestions_for_services.md to point to the master branch as the development branch.
+
 
 [0.0.2](https://github.com/mobinmob/void-66-services/releases/tag/v0.0.2) || 2021-02-15
 =
