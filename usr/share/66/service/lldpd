@@ -9,4 +9,4 @@
 
 [environment]
 # The second -d is for sending logs to stdout for the per-service logger.
-cmd_args=! -d
+cmd_args=!-dd
