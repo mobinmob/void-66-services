@@ -9,4 +9,4 @@
 
 [environment]
 # -S is for logging to stdout to use the per-service logger
-cmd_args=! -u nobody -g nogroup -S
+cmd_args=!-u nobody -g nogroup -S

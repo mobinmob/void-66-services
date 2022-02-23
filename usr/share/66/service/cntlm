@@ -10,4 +10,4 @@
 [environment]
 # Needs a proper /etc/cntlm.conf file.
 # -v is needed to provide more information on the logs.
-cmd_args=! -v
+cmd_args=!-v
