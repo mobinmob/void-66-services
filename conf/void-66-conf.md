@@ -20,26 +20,20 @@ The package also contains some scripts written in order to make the services wor
  
 Currently these packages are in a [PR](https://github.com/void-linux/void-packages/pull/25743). In order to install them one can build them from the PR or install them from the unofficial void-66 repo. Packages are available for i686, x86_64, aarch64, x86_64-musl and aarch64-musl.
 
-### 2.1 Installing packages from the void-66 repo.
+### 2.1 Installing packages from the `void-unofficial-repo-66`.
 
 Add the repo:
 
 _(commands prefixed by `#` must be run with elevated privileges, as root)_
 ```
-# echo "repository=https://codeberg.org/mobinmob/void-66/raw/branch/master" > /etc/xbps.d/50-repository-unofficial-void-66.conf
-```
-
-Sync the new repo and accept the signing key:
-
-```
-# xbps-install -Sy
+# xbps-install -S --repository=https://mirrors.gigenet.com/OSDN//storage/g/a/av/avyssos/repo void-unofficial-repo-66
 ```
 
 You will be prompted to accept the new key:
 ```
-https://codeberg.org/mobinmob/void-66/raw/branch/master/ repository has been RSA signed by "mobinmob <mobinmob@disroot.org>"
+https://mirrors.gigenet.com/OSDN//storage/g/a/av/avyssos/repo' repository has been RSA signed by "mobinmob"
 Fingerprint: c7:39:79:a3:2a:cf:f1:65:a6:df:3a:1a:6e:93:36:28
-Do you want to import this public key? [Y/n] 
+Do you want to import this public key? [Y/n]  
 ```
 
 After accepting it, install the new packages:
