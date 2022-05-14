@@ -1,0 +1,10 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = " nlnet name server daemon"
+@user = ( root )
+
+[start]
+@execute = (
+	execl-toc -d /run/nsd -m 0755 -o nsd -g nsd
+	nsd -d )
