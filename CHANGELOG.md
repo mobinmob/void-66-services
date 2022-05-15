@@ -16,6 +16,9 @@ These frontends have the suffix _ns after the service name.
     - Add simple logging documentation in conf/void-66-logging.md.
     - Add information about the new 66boot-* utilities in conf/void-66-conf.md
     - Change Suggestions_for_services.md to point to the master branch as the development branch.
+    - Add documentation for running runit services with the `runit` and `runit-wrapsv@` service frontend files in conf/void-66-runitsv.md. These service frontend files are not in this repo, but in the [66-voidlinux](https://codeberg.org/mobinmob/66-voidlinux) repo since they are currently part of the boot-66serv package.
+    - Change the instructions in conf/void-66-conf to use the new binary packages repo.
+
 
 
 [0.0.2](https://github.com/mobinmob/void-66-services/releases/tag/v0.0.2) || 2021-02-15
