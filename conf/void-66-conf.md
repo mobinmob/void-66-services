@@ -26,12 +26,12 @@ Add the repo:
 
 _(commands prefixed by `#` must be run with elevated privileges, as root)_
 ```
-# xbps-install -S --repository=https://mirrors.gigenet.com/OSDN//storage/g/a/av/avyssos/repo void-unofficial-repo-66
+# xbps-install --repository=https://codeberg.org/mobinmob/void-66/raw/branch/master  void-unofficial-repo-66
 ```
 
 You will be prompted to accept the new key:
 ```
-https://mirrors.gigenet.com/OSDN//storage/g/a/av/avyssos/repo' repository has been RSA signed by "mobinmob"
+https://codeberg.org/mobinmob/void-66/raw/branch/master' repository has been RSA signed by "mobinmob"
 Fingerprint: c7:39:79:a3:2a:cf:f1:65:a6:df:3a:1a:6e:93:36:28
 Do you want to import this public key? [Y/n]  
 ```
