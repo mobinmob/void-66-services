@@ -1,12 +1,12 @@
 [main]
-@type = classic
-@version = 0.0.2
+@type = longrun
+@version = 0.0.3
 @description = "seat daemon"
+@notify = 3
 @user = ( root )
 
 [start]
 @execute = ( execl-cmdline -s { seatd ${cmd_args} } )
 
 [environment]
-SEATD_LOGLEVEL=error
-cmd_args=!-g _seatd
+cmd_args=!-n 3 -g _seatd -l error
