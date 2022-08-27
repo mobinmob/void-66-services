@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "dynamic swap space manager daemon"
+@user = ( root )
+
+[start]
+@execute = ( swapspace )
+
