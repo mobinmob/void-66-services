@@ -1,0 +1,16 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "Fully featured and highly configurable SFTP server"
+@user = ( root )
+
+[start]
+@execute = ( sftpgo serve  )
+
+
+[environment]
+SFTPGO_HTTPD__TEMPLATES_PATH=/usr/share/sftpgo/templates
+SFTPGO_HTTPD__STATIC_FILES_PATH=/usr/share/sftpgo/static
+SFTPGO_DATA_PROVIDER__DRIVER=sqlite
+SFTPGO_DATA_PROVIDER__NAME=/var/lib/sftpgo/sftpgo.db
+SFTPGO_SFTPD__HOST_KEYS=/var/lib/sftpgo/id_rsa,/var/lib/sftpgo/id_ecdsa,/var/lib/sftpgo/id_ed25519
