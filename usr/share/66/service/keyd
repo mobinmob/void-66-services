@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "Key remapping daemon"
+@user = ( root )
+
+[start]
+@execute = ( keyd )
+
