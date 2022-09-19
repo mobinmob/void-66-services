@@ -38,7 +38,7 @@ Do you want to import this public key? [Y/n]
 
 After accepting it, install the new packages:
 ```
-# xbps-install boot-66serv void-66-services
+# xbps-install -S boot-66serv void-66-services
 ```
 
 ## 3. Configuration
