@@ -45,18 +45,13 @@ Switching to runit after installing/using 66-void, is not hard:
 
 If after the previous procedure someone wants to switch again, the procedure is similar:
 
-1.Remove runit-void:
+1.Install 66-void:
 
-```
-# xbps-remove runit-void
-```
-
-2.Install 66-void:
 ```
 # xbps-install -S 66-void
 ```
 
-3.After that, you can reboot with CTRL+ALT+DEL.
+2.After that, you can reboot with CTRL+ALT+DEL.
 
 
 ## Contents
@@ -92,3 +87,7 @@ Also included are some configuration files:
 */etc/os-release and /etc/hostname are part of the os.*
 
 The basic directories and symlinks for runit are also a parta of this package, in order to enable the use of the runit 66 service that reuses runit service scripts on top of 66.
+
+## Future work :
+
+- Currently 66-void does not include support for apparmor. I believe the best place for that is the upstream `boot-66ser` repository and I plan to sent an MR asap :)
