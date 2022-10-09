@@ -1,15 +1,19 @@
-# 66-void
+# 1. base-system-66 and 66-void packages
 
-`66-void` is a package that can replace runit-void and provide the user a voidlinux system that cleanly boots with 66, without any hacks.
+- `66-void` is a package that can replace `runit-void` and provide the user a voidlinux system that cleanly boots with 66, without any hacks.
 
-## Why?
+- `base-system-66` is a packages that can replace `base-system` and work with `66-void`
+
+## 1.1 Why?
 
 If a user follows the direction in 66-void-conf.md, they will end with a voidlinux system booted with 66. The system will work and be able to switch between runit and 66 by changing either the kernel commandline, or the init symlink.
 That is really nice and flexible, but it comes with a cost. In order to keep both systems working correctly, there are two services, a runit `core-service` named switch-initutils and a 66 frontend service file with the same name.
 There change the init utilities (halt, reboot, shutdown, poweroff) to match the running init system/service manager. That is a nice and (mostly) working **hack**.
 `66-void` tries to provide a better, cleaner way to use 66, with its own "base" package that fully replaces runit-void.
 
-## How to use
+`void-base-66` is a way to complete the transormation to a fully 66-based system. The only functional difference from the upstream official template is that `66-void` has replaces `runit-void` in the depends array.
+
+## 2. How to use 66-void
 
 Assuming a user has a **working system with 66**, they only need to install the package:
 
@@ -20,7 +24,7 @@ That is it :)
 
 After that, the kernelcommandline **should not have** `init=/usr/bin/66` anymore.
 
-#### Switch back to runit
+#### 2.1 Switch back to runit
 
 Switching to runit after installing/using 66-void, is not hard:
 
@@ -41,7 +45,7 @@ Switching to runit after installing/using 66-void, is not hard:
 ```
 # /etc/66/reboot
 ```
-#### Switch to using 66 from using runit
+#### 2.2 Switch to using 66 from using runit
 
 If after the previous procedure someone wants to switch again, the procedure is similar:
 
@@ -53,8 +57,15 @@ If after the previous procedure someone wants to switch again, the procedure is 
 
 2.After that, you can reboot with CTRL+ALT+DEL.
 
+## 3. How to use base-system-66
 
-## Contents
+To complete the transformation to fully 66-based system, just install the package.
+
+````
+# xbps-install -S base-system-66
+````
+
+## 4. `66-void` package contents
 
 The package contains all the non-init utilities that exists in the void-runit project. These are:
 
