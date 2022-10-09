@@ -12,12 +12,16 @@ Changes
 - Create additional service frontend files for nginx, dhcpcd and dhcpcd@ that use pid namespaces though 66-ns.
 These frontends have the suffix _ns after the service name.
 - All services are represented now by either a single frontend file or a single directory with necessary files/subdirs.
+- Use a single template that packages the master branch for the users that want to track development - `void-66-services-master`.
+- Include documentantion in the package, starting from `void-66-services-master` and version 0.0.3.
 - Documentation:
-    - Add simple logging documentation in conf/void-66-logging.md.
-    - Add information about the new 66boot-* utilities in conf/void-66-conf.md
+    - Add simple logging documentation in *conf/void-66-logging.md*.
+    - Add information about the new 66boot-* utilities in *conf/void-66-conf.md*
     - Change Suggestions_for_services.md to point to the master branch as the development branch.
-    - Add documentation for running runit services with the `runit` and `runit-wrapsv@` service frontend files in conf/void-66-runitsv.md. These service frontend files are not in this repo, but in the [66-voidlinux](https://codeberg.org/mobinmob/66-voidlinux) repo since they are currently part of the boot-66serv package.
-    - Change the instructions in conf/void-66-conf to use the new binary packages repo.
+    - Add documentation for running runit services with the `runit` and `runit-wrapsv@` service frontend files in *conf/void-66-runitsv.md*. These service frontend files are not in this repo, but in the [66-voidlinux](https://codeberg.org/mobinmob/66-voidlinux) repo since they are currently part of the boot-66serv package.
+    - Change the instructions in *conf/void-66-conf.md* to use the new binary packages repo.
+    - Add documentation for the new 66-void and base-system packages in *conf/void-66-base-system.md*.
+    - 
 
 
 
