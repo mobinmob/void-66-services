@@ -19,6 +19,10 @@ do_install() {
 	vmkdir usr
 	vcopy usr /
 	chmod +x "${DESTDIR}/usr/share/66/service/dbus/data/check"
+	vdoc conf/void-66-conf.md
+	vdoc conf/void-66-logging.md
+	vdoc conf/void-66-runitsv.md
+	vdoc conf/void-66-base-system.md
 	vlicense LICENSE
 	vlicense AUTHORS
 }
