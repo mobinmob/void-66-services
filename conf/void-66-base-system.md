@@ -6,9 +6,9 @@
 
 ## 1.1 Why?
 
-If a user follows the direction in 66-void-conf.md, they will end with a voidlinux system booted with 66. The system will work and be able to switch between runit and 66 by changing either the kernel commandline, or the init symlink.
+If a user follows the directions in [66-void-conf.md](https://github.com/mobinmob/void-66-services/blob/master/conf/void-66-conf.md), they will end with a voidlinux system booted with 66. The system will work and be able to switch between runit and 66 by changing either the kernel commandline, or the init symlink.
 That is really nice and flexible, but it comes with a cost. In order to keep both systems working correctly, there are two services, a runit `core-service` named switch-initutils and a 66 frontend service file with the same name.
-There change the init utilities (halt, reboot, shutdown, poweroff) to match the running init system/service manager. That is a nice and (mostly) working **hack**.
+There change the init utilities (halt, reboot, shutdown, poweroff) to match the running init system/service manager. That is a nice and (mostly) working hack.
 `66-void` tries to provide a better, cleaner way to use 66, with its own "base" package that fully replaces runit-void.
 
 `void-base-66` is a way to complete the transormation to a fully 66-based system. The only functional difference from the upstream official template is that `66-void` has replaces `runit-void` in the depends array.
@@ -22,7 +22,7 @@ Assuming a user has a **working system with 66**, they only need to install the 
 ```
 That is it :)
 
-After that, the kernelcommandline **should not have** `init=/usr/bin/66` anymore.
+After that, the kernel commandline **should not have** `init=/usr/bin/66` anymore.
 
 #### 2.1 Switch back to runit
 
@@ -84,7 +84,7 @@ There are also the 66 init utilities, namely:
 - poweroff
 - shutdown
 
-as well as **init**, as a link to `/usr/bin/66`.
+as well as `/usr/bin/init`, as a link to `/usr/bin/66`.
 
 Also included are some configuration files:
 
