@@ -49,13 +49,22 @@ Switching to runit after installing/using 66-void, is not hard:
 
 If after the previous procedure someone wants to switch again, the procedure is similar:
 
-1.Install 66-void:
+1.Copy /usr/bin/halt to /tmp
+
+```
+# cp /usr/bin/halt /tmp
+
+2.Install 66-void:
 
 ```
 # xbps-install -S 66-void
 ```
 
-2.After that, you can reboot with CTRL+ALT+DEL.
+3.After that, you can halt your system:
+
+```
+# sync && /tmp/halt
+```
 
 ## 3. How to use base-system-66
 
