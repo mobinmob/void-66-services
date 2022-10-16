@@ -53,6 +53,7 @@ If after the previous procedure someone wants to switch again, the procedure is 
 
 ```
 # cp /usr/bin/halt /tmp
+```
 
 2.Install 66-void:
 
@@ -70,9 +71,9 @@ If after the previous procedure someone wants to switch again, the procedure is 
 
 To complete the transformation to fully 66-based system, just install the package.
 
-````
+```
 # xbps-install -S base-system-66
-````
+```
 
 ## 4. `66-void` package contents
 
