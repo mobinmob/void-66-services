@@ -1,10 +1,10 @@
-# 1. base-system-66 and 66-void packages
+## 1. base-system-66 and 66-void packages
 
 - `66-void` is a package that can replace `runit-void` and provide the user a voidlinux system that cleanly boots with 66, without any hacks.
 
 - `base-system-66` is a packages that can replace `base-system` and work with `66-void`
 
-## 1.1 Why?
+#### 1.1 Why?
 
 If a user follows the directions in [66-void-conf.md](https://github.com/mobinmob/void-66-services/blob/master/conf/void-66-conf.md), they will end with a voidlinux system booted with 66. The system will work and be able to switch between runit and 66 by changing either the kernel commandline, or the init symlink.
 That is really nice and flexible, but it comes with a cost. In order to keep both systems working correctly, there are two services, a runit `core-service` named switch-initutils and a 66 frontend service file with the same name.
