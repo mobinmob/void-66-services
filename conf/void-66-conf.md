@@ -138,3 +138,5 @@ Please consult the `boot@` man page and the comments of the configuration file. 
 ### 3.4 Switching to 66 from runit
 
 To boot the system with 66 instead of runit after the configuration, you just add `init=/usr/bin/66` to the kernel command line. To switch back, remove it.
+
+If a user decides that a permanent and clean switch to 66 is the way to go, they should consult [void-66-base-system.md](https://github.com/mobinmob/void-66-services/blob/master/conf/void-66-base-system.md).
