@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "hw rng entropy gatherer daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { rngd -f ${cmd_args} }  )
+
+[environment]
+# Using default arguments.
+cmd_args=!--random-device=/dev/random --rng-device=/dev/hwrng
