@@ -1,0 +1,8 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "havege rng daemon"
+@user = ( root )
+
+[start]
+@execute = ( haveged -w 1024 -v 1 -F )
