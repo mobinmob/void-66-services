@@ -2,9 +2,14 @@ Changes
 =
 
  *This file contains the most important changes for each release of the project. It is not meant to be a list of every change as that can be obtained by `git log`. It is also not documentation for every change.*
-
-0.0.3 (not released yet)
+[0.0.4] (not release yet)
 =
+
+
+[0.0.3]() || 2023-02-05
+=
+
+- 181 services in total!
 - More work to have services log to the per-service logger instead of syslog.
 - Add a changelog.
 - Split licensing information  (LICENSE - LICENSE-3RD-PARTY) and amend the README.md accordingly.
@@ -20,8 +25,8 @@ These frontends have the suffix _ns after the service name.
     - Change Suggestions_for_services.md to point to the master branch as the development branch.
     - Add documentation for running runit services with the `runit` and `runit-wrapsv@` service frontend files in *conf/void-66-runitsv.md*. These service frontend files are not in this repo, but in the [66-voidlinux](https://codeberg.org/mobinmob/66-voidlinux) repo since they are currently part of the boot-66serv package.
     - Change the instructions in *conf/void-66-conf.md* to use the new binary packages repo.
-    - Add documentation for the new 66-void and base-system packages in *conf/void-66-base-system.md*.
-    - 
+    - Add documentation for the new 66-void and base-system-66 packages in *conf/void-66-base-system.md*.
+    - Many fixes.
 
 
 
