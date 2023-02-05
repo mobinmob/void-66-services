@@ -2,6 +2,8 @@ Changes
 =
 
  *This file contains the most important changes for each release of the project. It is not meant to be a list of every change as that can be obtained by `git log`. It is also not documentation for every change.*
+
+
 [0.0.4] (not release yet)
 =
 
