@@ -2,12 +2,32 @@ Changes
 =
 
  *This file contains the most important changes for each release of the project. It is not meant to be a list of every change as that can be obtained by `git log`. It is also not documentation for every change.*
-
-0.0.3 (not released yet)
+[0.0.4] (not release yet)
 =
+
+
+[0.0.3]() || 2023-02-05
+=
+
+- 181 services in total!
 - More work to have services log to the per-service logger instead of syslog.
 - Add a changelog.
 - Split licensing information  (LICENSE - LICENSE-3RD-PARTY) and amend the README.md accordingly.
+- Repo-wide: remove unneeded @options key, standardise layout a little.
+- Create additional service frontend files for nginx, dhcpcd and dhcpcd@ that use pid namespaces though 66-ns.
+These frontends have the suffix _ns after the service name.
+- All services are represented now by either a single frontend file or a single directory with necessary files/subdirs.
+- Use a single template that packages the master branch for the users that want to track development - `void-66-services-master`.
+- Include documentantion in the package, starting from `void-66-services-master` and version 0.0.3.
+- Documentation:
+    - Add simple logging documentation in *conf/void-66-logging.md*.
+    - Add information about the new 66boot-* utilities in *conf/void-66-conf.md*
+    - Change Suggestions_for_services.md to point to the master branch as the development branch.
+    - Add documentation for running runit services with the `runit` and `runit-wrapsv@` service frontend files in *conf/void-66-runitsv.md*. These service frontend files are not in this repo, but in the [66-voidlinux](https://codeberg.org/mobinmob/66-voidlinux) repo since they are currently part of the boot-66serv package.
+    - Change the instructions in *conf/void-66-conf.md* to use the new binary packages repo.
+    - Add documentation for the new 66-void and base-system-66 packages in *conf/void-66-base-system.md*.
+    - Many fixes.
+
 
 
 [0.0.2](https://github.com/mobinmob/void-66-services/releases/tag/v0.0.2) || 2021-02-15
