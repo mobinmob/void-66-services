@@ -1,6 +1,6 @@
 ## 1. 66boot-* utilities
 
-In the boot-66serv package there are three small posix shell scripts that try to make configurations for 66 on voidlinux as easy as possible.
+In the boot-66serv package there are three small posix shell scripts that try to make configuration for 66 on voidlinux as easy as possible.
 In many cases, running these will be the only step a user needs to get the stage 1 scripts configured correctly.
 These are:
 
@@ -40,9 +40,9 @@ When an option in the `boot@` module service configuration is disabled,the corre
 It can also lead to severe problems in boot if needed options are disabled. `66boot-rcdotconf` will check for the validity of some configuration keys when applying configurationf from `/etc/rc.conf`, but there was another area with potential issues.
 
 `boot@` has seperate services for the support of lvm, mdraid, dmraid, luks, zfs, btrfs. In the original implementation enabling one of these if the necessary utilities were not present in the system or even if there were but no storage device of the type was detected, the boot will fail. 
-This was... correct, but also fragile. `66boot-storage-autoconf` was created to make this area of configuration easier for the user and the boot proccess more robust.
+This was... correct, but also **fragile**. `66boot-storage-autoconf` was created to make this area of configuration easier for the user and the boot proccess more robust.
 
-This is accomplised by using `blkid` from `util-linux` to discover the TYPE of storage volumes in the system and `66-which` to determine if the corresponding utilities exisist. After that, the configuration is written with `66-env` in the environment/configuration file of the boot@system service and any iregularities are pointed out.
+This is accomplised by using `blkid` from `util-linux` to discover the *TYPE* of storage volumes in the system and `66-which` to determine if the corresponding utilities exists. After that, the configuration is written with `66-env` in the environment/configuration file of the boot@system service and any iregularities are pointed out.
 
 ## 3. Upstream contributions based on the scripts
 
