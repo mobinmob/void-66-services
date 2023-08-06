@@ -31,13 +31,13 @@ These are all implemented as an external script - the user is not required to us
 
 After running `66boot-initial-setup` a user is expected to configure their system, either by editing directly `/etc/66rc.conf` or by using `66-env`.
 The boot@ service gives the user a lot of power in order to configure the boot process and that is awesome and... dangerous.
-Some basic configuration keys correspond to the configurations keys in /etc/rc.conf and these settings can be safely transferred to the new configuration format. That is exactly what `66boot-rc.conf` does. And in many cases it will be enough to run it in order to configure  the system.
+Some basic configuration keys correspond to the configurations keys in /etc/rc.conf and these settings can be safely transferred to the new configuration format. That is exactly what `66boot-rcdotconf` does. And in many cases it will be enough to run it in order to configure  the system, by reusing the native voidlinux configuration.
 A user can then either continue using rc.conf and re-run the script on configuration changes or gradually learn and take advantag of the new configuration format.
 
 ### 2.3 66boot-storage-autoconf
 
 When an option in the `boot@` module service configuration is disabled,the corresponding service script will not run at all. That is a very nice feature that lets a user fine-tune the boot process and avoid execution of what they do not need.
-It can also lead to severe problems in boot if a needed options are disabled. `66boot-rcdotconf` will check for the validity of some configuration keys when applying configurationf from `/etc/rc.conf`, but there was another area with potential issues.
+It can also lead to severe problems in boot if needed options are disabled. `66boot-rcdotconf` will check for the validity of some configuration keys when applying configurationf from `/etc/rc.conf`, but there was another area with potential issues.
 
 `boot@` has seperate services for the support of lvm, mdraid, dmraid, luks, zfs, btrfs. In the original implementation enabling one of these if the necessary utilities were not present in the system or even if there were but no storage device of the type was detected, the boot will fail. 
 This was... correct, but also fragile. `66boot-storage-autoconf` was created to make this area of configuration easier for the user and the boot proccess more robust.
@@ -49,7 +49,7 @@ This is accomplised by using `blkid` from `util-linux` to discover the TYPE of s
 These three scripts are in some ways voidlinux-specific:
 
 - `66boot-initial-setup` is implementing policy that is based on the current official voidlinux policy. It does not have much that will help beyond the distribution.
-- `66boot-rcdotconf` is tranlating the voidlinux `/etc/rc.conf`, and while they are other distributions with similar configurations it is not certain that translated to exactly the same or compatible implementation.
+- [`66boot-rcdotconf`](https://codeberg.org/mobinmob/66-voidlinux/commit/721050e92677a728f2c4f4eccf8b8969eb21447d) is tranlating the voidlinux `/etc/rc.conf`, and while they are other distributions with similar configurations it is not certain that translated to exactly the same or compatible implementation.
 - `66boot-storage-autoconf` is probably the most distribution-independent of the three. But it still has some aspects - such as package names- that are voidlinux-specific. These are clearly documented in the script comments.
 
 Code and ideas from `66boot-rcdotconf` and `66boot-storage-autoconf` has been used to improve the configure script in the upstream boot@ service. If anyone needs to leard the gory details, they can [read the MR comments](https://git.obarun.org/obmods/boot-66serv/-/merge_requests/1).
@@ -59,3 +59,5 @@ Code and ideas from `66boot-rcdotconf` and `66boot-storage-autoconf` has been us
 There is not much to do in adding features to the scripts - they will follow the development off 66. That means that in the next version they will need to be adjusted for the major cli ui changes. 
 
 There will probably be a feature removal for 66boot-initial setup. Creating trees and populating them will be streamlined and the -effective but crude- way to  do that will be obsolete.
+
+There is a plan to reuse code from `66boot-rcdotconf` and `66boot-storage-autoconf` directly in the configure script of the boot@ service. That will enable seemless and automatic configuration for the user by default, with all the power of the full boot@ environment file available.
