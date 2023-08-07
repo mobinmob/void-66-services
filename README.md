@@ -35,3 +35,13 @@ in it.
 When using these packages, frontend service files will be placed in under */usr/share/66/service/*.
 To use them see the 66 documentation contained in the *66-doc* package, especially
 the man pages for *66-enable* and *66-disable* commands.
+
+## Documentation
+
+Under conf/ one can find some documentation:
+
+- [Small and simple guide to setup 66 booting on voidlinux](https://github.com/mobinmob/void-66-services/blob/master/conf/void-66-conf.md)
+- [Guide on reusing runit services with 66](https://github.com/mobinmob/void-66-services/blob/master/conf/void-66-runitsv.md)
+- [Information for logging with 66](https://github.com/mobinmob/void-66-services/blob/master/conf/void-66-logging.md)
+- [How to use some the 66boot utilites for configuration](https://github.com/mobinmob/void-66-services/blob/master/conf/void-66boot-.md)
+- [How to **completely** migrate from runit to 66 and back](https://github.com/mobinmob/void-66-services/blob/master/conf/void-66-base-system.md)
