@@ -31,7 +31,7 @@ _(commands prefixed by `#` must be run with elevated privileges, as root)_
 
 You will be prompted to accept the new key:
 ```
-https://codeberg.org/mobinmob/void-66/raw/branch/master' repository has been RSA signed by "mobinmob"
+https://avyssos.eu/repos/voidlinux/66 ' repository has been RSA signed by "mobinmob"
 Fingerprint: c7:39:79:a3:2a:cf:f1:65:a6:df:3a:1a:6e:93:36:28
 Do you want to import this public key? [Y/n]  
 ```
