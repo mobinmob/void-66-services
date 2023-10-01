@@ -26,7 +26,7 @@ Add the repo:
 
 _(commands prefixed by `#` must be run with elevated privileges, as root)_
 ```
-# xbps-install --repository=https://avyssos.eu/repos/voidlinux/66/ void-unofficial-repo-66
+# xbps-install -Sy --repository=https://avyssos.eu/repos/voidlinux/66/ void-unofficial-repo-66
 ```
 
 You will be prompted to accept the new key:
