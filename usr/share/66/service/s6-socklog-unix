@@ -1,0 +1,9 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "s6-socklog daemon"
+@user = ( root )
+@notify = 3
+
+[start]
+@execute = ( s6-socklog -d 3 )
