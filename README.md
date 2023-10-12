@@ -23,7 +23,7 @@ The services contained in this repository are very much a **work in progress**.
 
 ## Installation
 
-The [boot-66serv PR](https://github.com/void-linux/void-packages/pull/45578)
+The [s6/66 integration PR](https://github.com/void-linux/void-packages/pull/45578)
 in the void-packages repo contains a template for the lastest released void-66-packages
 version. Creating a package from that template and installing it is the
 preferred method to get the frontend service files.
