@@ -1,0 +1,10 @@
+[main]
+@type = classic
+@description = "deluge daemon"
+@version = 0.0.1
+@user = ( user )
+
+[start]
+@execute = ( deluged -d )
+
+
