@@ -1,0 +1,12 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "server daemon for snapcast"
+@user = ( root )
+
+[start]
+@runas = _snapserver
+@execute = ( execl-cmdline -s { snapserver ${cmd_args} }  )
+
+[environment]
+cmd_args=!-c /etc/snapserver.conf
