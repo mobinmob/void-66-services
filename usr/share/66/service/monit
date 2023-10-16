@@ -1,0 +1,13 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "monit daemon"
+@user = ( root )
+
+[start]
+@execute = ( execl-cmdline -s { monit -i -c ${config_file} ${cmd_args} } )
+
+[environment]
+config_file=!/etc/monit/monitrc
+cmd_args=!-l /dev/stdout
+
