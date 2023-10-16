@@ -1,0 +1,15 @@
+#@I is the tty name in which agetty-autologin starts
+[main]
+@type = classic
+@version = 2.1.0
+@description = "Autologin in @I"
+@user = ( root )
+@options = ( env )
+
+[start]
+@execute = ( execl-cmdline -s { agetty ${cmd_args} -a ${autologin_user} @I } )
+
+[environment]
+cmd_args=!-J 38400
+#Replace autologin_user with the name of the user you  want to autologin
+autologin_user=!autologin_user
