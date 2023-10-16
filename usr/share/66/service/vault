@@ -1,0 +1,14 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "vault daemon"
+@user = ( root )
+
+[start]
+@runas = _vault
+@execute = ( execl-cmdline -s { vault server ${cmd_args} } )
+
+[environment]
+# The voidlinux services specifies only the directory, but
+# vault needs a file.
+cmd_args=!-config=/etc/vault/conf
