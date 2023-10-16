@@ -1,0 +1,8 @@
+[main]
+@type = classic
+@version = 0.0.1
+@description = "independent session tracking daemon"
+@user = ( root )
+
+[start]
+@execute = ( turnstiled )
