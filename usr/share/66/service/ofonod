@@ -1,9 +1,9 @@
 [main]
-@type = longrun
+@type = classic
 @description = "ofonod daemon service, an infrastructure for mobile GSM/UMTS support"
 @version = 0.0.1
 @user = ( root )
-@extdepends = ( dbus ) # mandatory in order to run
+@depends = ( dbus ) # mandatory in order to run
 
 [start]
 @execute = ( ofonod -n )

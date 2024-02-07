@@ -1,9 +1,9 @@
 [main]
-@type = longrun
+@type = classic
 @description = "xdm daemon"
-@version = 0.0.1
+@version = 0.0.2
 @user = ( root )
-@extdepends = ( dbus ) # if the user does not need dbus running, this line can be commented out or ommited
+@depends = ( dbus ) # if the user does not need dbus running, this line can be commented out or ommited
 @timeout-up = 3000
 
 [start]

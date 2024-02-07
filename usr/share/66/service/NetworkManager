@@ -1,9 +1,9 @@
 [main]
-@type = longrun
-@version = 0.0.2
+@type = classic
+@version = 0.0.3
 @description = "networkmanager daemon"
 @user = ( root )
-@extdepends = ( dbus )
+@depends = ( dbus )
 
 [start]
 @execute = ( execl-cmdline -s { NetworkManager ${cmd_args} }  )

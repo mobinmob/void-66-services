@@ -3,7 +3,7 @@
 @version = 0.0.1
 @description = "snapper daemon"
 @user = ( root )
-@extdepends = ( dbus )
+@depends = ( dbus )
 
 [start]
 @execute = ( snapperd )

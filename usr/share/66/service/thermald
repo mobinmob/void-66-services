@@ -1,9 +1,9 @@
 [main]
-@type = longrun
-@version = 0.0.1
+@type = classic
+@version = 0.0.2
 @description = "thermal daemon"
 @user = ( root )
-@extdepends = ( dbus )
+@depends = ( dbus )
 
 [start]
 @execute = ( thermald --no-daemon --dbus-enable )
