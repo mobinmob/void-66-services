@@ -1,5 +1,5 @@
 [main]
-@type = classic
+@type = longrun
 @version = 0.0.1
 @description = "snapper daemon"
 @user = ( root )
