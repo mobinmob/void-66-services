@@ -1,14 +1,13 @@
 [main]
 @type = classic
 @description = "WPA/WPA2/IEEE 802.1X Supplicant daemon"
-@version = 0.0.1
+@version = 0.0.2
 @user = ( root )
 @hiercopy = ( data )
 
 [start]
 @build = custom
-@shebang = "/bin/sh"
-@execute = (
+@execute = (#!/bin/sh
 exec 2>&1
 if [ -n "$CONF_FILE" ]; then
 	${OPTS:=-M -c ${CONF_FILE:-/etc/wpa_supplicant/wpa_supplicant.conf} ${WPA_INTERFACE:+-i ${WPA_INTERFACE}} ${DRIVER:+-D ${DRIVER}} -s}
