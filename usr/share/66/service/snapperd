@@ -1,6 +1,6 @@
 [main]
-@type = longrun
-@version = 0.0.1
+@type = classic
+@version = 0.0.2
 @description = "snapper daemon"
 @user = ( root )
 @depends = ( dbus )
