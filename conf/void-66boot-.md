@@ -4,10 +4,9 @@ In the boot-66serv package there are three small posix shell scripts that try to
 In many cases, running these will be the only step a user needs to get the stage 1 scripts configured correctly.
 These are:
 
-1. 66boot-initial-setup
-2. 66boot-rcdotconf
-3. 66boot-storage-autoconf
-
+1. [`66boot-initial-setup`](https://codeberg.org/mobinmob/66-voidlinux/src/branch/master/srcpkgs/boot-66serv/files/66boot-initial-setup)
+2. [`66boot-rcdotconf`](https://codeberg.org/mobinmob/66-voidlinux/src/branch/master/srcpkgs/boot-66serv/files/66boot-rcdotconf)
+3. [`66boot-storage-autoconf`](https://codeberg.org/mobinmob/66-voidlinux/src/branch/master/srcpkgs/boot-66serv/files/66boot-storage-autoconf)
 ### 2.1 66boot-initial-setup
 
 `66boot-initial-setup` is the first script written. 
@@ -48,9 +47,9 @@ This is accomplised by using `blkid` from `util-linux` to discover the *TYPE* of
 
 These three scripts are in some ways voidlinux-specific:
 
-- `66boot-initial-setup` is implementing policy that is based on the current official voidlinux policy. It does not have much that will help beyond the distribution.
-- [`66boot-rcdotconf`](https://codeberg.org/mobinmob/66-voidlinux/commit/721050e92677a728f2c4f4eccf8b8969eb21447d) is tranlating the voidlinux `/etc/rc.conf`, and while they are other distributions with similar configurations it is not certain that translated to exactly the same or compatible implementation.
-- `66boot-storage-autoconf` is probably the most distribution-independent of the three. But it still has some aspects - such as package names- that are voidlinux-specific. These are clearly documented in the script comments.
+- 66boot-initial-setup is implementing policy that is based on the current official voidlinux policy. It does not have much that will help beyond the distribution.
+- 66boot-rcdotconf is reusing the voidlinux `/etc/rc.conf`, and while they are other distributions with similar configurations files and keys it is not certain that this specific implementation can be reused. When time permits, a test port to a distribution that uses a similar configuration file will be created.
+- 66boot-storage-autoconf is probably the most distribution-independent of the three. But it still has some aspects - such as package names- that are voidlinux-specific. These are clearly documented in the script comments.
 
 Code and ideas from `66boot-rcdotconf` and `66boot-storage-autoconf` has been used to improve the configure script in the upstream boot@ service. If anyone needs to leard the gory details, they can [read the MR comments](https://git.obarun.org/obmods/boot-66serv/-/merge_requests/1).
 
@@ -60,4 +59,4 @@ There is not much to do in adding features to the scripts - they will follow the
 
 There will probably be a feature removal for 66boot-initial setup. Creating trees and populating them will be streamlined and the -effective but crude- way to  do that will be obsolete.
 
-There is a plan to reuse code from `66boot-rcdotconf` and `66boot-storage-autoconf` directly in the configure script of the boot@ service. That will enable seemless and automatic configuration for the user by default, with all the power of the full boot@ environment file available.
+There is a plan to reuse code from `66boot-rcdotconf` and `66boot-storage-autoconf` directly in the configure script of the boot@ service. That will enable *seemless and automatic* configuration for the user by default, with all the power of the full boot@ environment file available if needed.

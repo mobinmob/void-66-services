@@ -111,4 +111,4 @@ The basic directories and symlinks for runit are also a parta of this package, i
 
 ## Future work :
 
-- Currently 66-void does not include support for apparmor. I believe the best place for that is the upstream `boot-66ser` repository and I plan to sent an MR asap :)
+- Currently 66-void does not include support for apparmor. I believe the best place for that is the upstream `boot-66serv` repository and I plan to sent an MR asap :)
