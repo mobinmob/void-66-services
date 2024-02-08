@@ -4,7 +4,7 @@
 @description = "sddm daemon"
 @user = ( root )
 @depends = ( dbus )
-@timeout-up = 3000
+@timeout-kill = 3000
 
 [start]
 @execute = (

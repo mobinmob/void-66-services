@@ -4,7 +4,7 @@
 @version = 0.0.2
 @user = ( root )
 @depends = ( dbus ) # if the user does not need dbus running, this line can be commented out or ommited
-@timeout-up = 3000
+@timeout-kill = 3000
 
 [start]
 @execute = ( execl-cmdline -s { xdm -nodaemon ${cmd_args} } )
