@@ -1,10 +1,10 @@
 [main]
-@type = longrun
-@version = 0.0.2
+@type = classic
+@version = 0.0.3
 @description = "sddm daemon"
 @user = ( root )
-@extdepends = ( dbus )
-@timeout-up = 3000
+@depends = ( dbus )
+@timeout-kill = 3000
 
 [start]
 @execute = (

@@ -1,13 +1,12 @@
 [main]
 @type = classic
-@version = 0.0.1
+@version = 0.0.2
 @description = "snooze-weekly daemon"
 @user = ( root )
 
 [start]
 @build = custom
-@shebang = "/bin/sh"
-@execute = (
+@execute = (#!/bin/sh
 	exec 2>&1
 	execl-toc -d /var/cache/snooze
 	exec snooze -w 0 -s 7d -t /var/cache/snooze/weekly -- sh -c \

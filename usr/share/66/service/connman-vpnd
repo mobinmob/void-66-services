@@ -1,9 +1,9 @@
 [main]
-@type = longrun
+@type = classic
 @description = "conman-vpn daemon"
-@version = 0.0.1 
+@version = 0.0.2 
 @user = ( root )
-@extdepends = ( dbus )
+@depends = ( dbus )
 
 
 [start]

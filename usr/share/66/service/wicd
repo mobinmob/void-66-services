@@ -1,9 +1,9 @@
 [main]
-@type = longrun
+@type = classic
 @description = "wicd"
-@version = 0.0.2
+@version = 0.0.3
 @user = ( root )
-@extdepends = ( dbus )
+@depends = ( dbus )
 
 [start]
 @execute = ( wicd -f )

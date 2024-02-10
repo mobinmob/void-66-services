@@ -1,10 +1,10 @@
 [main]
-@type = longrun
+@type = classic
 @description = "lxdm daemon"
-@version = 0.0.2
+@version = 0.0.3
 @user = ( root )
-@extdepends = ( dbus )
-@timeout-up = 3000
+@depends = ( dbus )
+@timeout-kill = 3000
 
 [start]
 @execute = ( lxdm )
